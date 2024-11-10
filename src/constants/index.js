@@ -6,7 +6,7 @@ export const HERO_CONTENT = `Hi, I’m Sai Rithwik Kukunuri, an Honors undergrad
 
 export const ABOUT_TEXT = `
 I still remember the excitement of writing my very first program—it sparked a passion for coding and 
-problem-solving that has only grown since. As a Software Engineering student with a Minor in Data Science 
+problem-solving that has only grown since. As a Computer Science (Software Engineering) student with a Minor in Data Science 
 at Arizona State University, I am always looking for opportunities to apply my skills and build software 
 that can make a difference.My interests span across full-stack development and machine learning, where 
 I enjoy creating projects that blend creativity with technical problem-solving. I am also deeply interested 
