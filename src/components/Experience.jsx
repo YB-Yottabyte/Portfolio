@@ -29,11 +29,17 @@ const Experience = () => {
                     
                     
                     className="w-full max-w-xl lg:w-3/4">
-                        <h6 className="mb-2 font-semibold">
-                            {experience.role} - <span className="text-sm text-purple-100">
-                                {experience.company}
-                            </span>
-                        </h6>
+                    <h6 className="mb-2 font-semibold">
+                      {experience.role} -  
+                      <a href={experience.certificateurl} target="_blank" 
+                      rel="noopener noreferrer" className="text-sm text-white font-medium cursor-pointer inline-block px-4 py-2 rounded-lg transition-all duration-300 ease-in-out bg-transparent hover:bg-gradient-to-r hover:from-blue-500 hover:to-teal-500 hover:text-white">
+                        {experience.company}
+                      </a>
+                    </h6>
+
+
+
+                      
                         <p className="mb-4 text-neutral-400">{experience.description}</p>
                         
                         {experience.technologies.map((tech, index) => (
