@@ -29,7 +29,7 @@ export const EXPERIENCES = [
     role: "Project Management Intern",
     company: "Excelerate",
     description: `As a Project Lead, I gained experience in creating project plans, defining goals, and developing timelines. I coordinated tasks and resources, monitored progress, and communicated with Project Heads. I also worked on risk management, problem-solving, and fostering teamwork.`,
-    technologies: ["Leadership", "Project Coordination", "Creative Thinking", "Coordinating Activities"],
+    technologies: ["Leadership", "Project Coordination", "Creative Thinking"],
   },
   {
     year: "June 2023 - July 2023",
