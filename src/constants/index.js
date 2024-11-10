@@ -20,23 +20,23 @@ export const EXPERIENCES = [
   {
     year: "December 2022 - Present",
     role: "Coach | Social Media Team Graphic Designer | SAT Bootcamp Guide ",
-    company: " Schoolhouse.world",
-    description: `Led a team in developing and maintaining web applications using JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases. Collaborated with stakeholders to define project requirements and timelines.`,
-    technologies: ["Tutoring", "Onboarding Tutors", "Graphic Design"],
+    company: "Schoolhouse.world",
+    description: `At Schoolhouse.world, I design LinkedIn tutor spotlights to increase engagement. I coach peer reviewers to improve feedback quality. I’ve tutored 161+ learners for over 86 hours, boosting their academic performance. I also help onboard new tutors to improve the learning experience.`,
+    technologies: ["Onboarding Tutors & Mentorship", "Graphic Design", "Coaching"],
   },
   {
     year: "June 2023 - July 2023",
-    role: "Project Lead",
+    role: "Project Management Intern",
     company: "Excelerate",
-    description: `Designed and developed user interfaces for web applications using Next.js and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
-    technologies: ["HTML", "CSS", "Vue.js", "mySQL"],
+    description: `As a Project Lead, I gained experience in creating project plans, defining goals, and developing timelines. I coordinated tasks and resources, monitored progress, and communicated with Project Heads. I also worked on risk management, problem-solving, and fostering teamwork.`,
+    technologies: ["Leadership", "Project Coordination", "Creative Thinking", "Coordinating Activities"],
   },
   {
     year: "June 2023 - July 2023",
-    role: "Project Manager",
+    role: "Cybersecurity Intern",
     company: "Excelerate",
-    description: `Designed and developed user interfaces for web applications using Next.js and React. Worked closely with backend developers to integrate frontend components with Node.js APIs. Implemented responsive designs and optimized frontend performance.`,
-    technologies: ["HTML", "CSS", "Vue.js", "mySQL"],
+    description: `As a Cybersecurity Intern, I gained experience in project management and cybersecurity, including developing timelines, coordinating tasks, and monitoring progress. I created a Virtual Machine (VM) with advanced security tools for organization-wide use, which enhanced my skills in threat analysis and cybersecurity.`,
+    technologies: ["Leadership", "Cyber Defense Analyst", "Creative Thinking", "Team Collaboration"],
   },
 ];
 
