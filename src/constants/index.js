@@ -23,6 +23,7 @@ export const EXPERIENCES = [
     company: "Schoolhouse.world",
     description: `At Schoolhouse.world, I design LinkedIn tutor spotlights to increase engagement. I coach peer reviewers to improve feedback quality. I’ve tutored 161+ learners for over 86 hours, boosting their academic performance. I also help onboard new tutors to improve the learning experience.`,
     technologies: ["Onboarding Tutors & Mentorship", "Graphic Design", "Coaching"],
+    certificateurl: "https://schoolhouse.world/transcript/b67611be-9637-45bb-af2e-21e57d6e36b9",
   },
   {
     year: "June 2023 - July 2023",
@@ -30,6 +31,7 @@ export const EXPERIENCES = [
     company: "Excelerate",
     description: `As a Project Lead, I gained experience in creating project plans, defining goals, and developing timelines. I coordinated tasks and resources, monitored progress, and communicated with Project Heads. I also worked on risk management, problem-solving, and fostering teamwork.`,
     technologies: ["Leadership", "Project Coordination", "Creative Thinking"],
+    certificateurl: "https://drive.google.com/file/d/11HIimp_CC-9bpNRt0ZpMivq-VNEJCSfI/view?usp=sharing",
   },
   {
     year: "June 2023 - July 2023",
@@ -37,6 +39,7 @@ export const EXPERIENCES = [
     company: "Excelerate",
     description: `As a Cybersecurity Intern, I gained experience in project management and cybersecurity, including developing timelines, coordinating tasks, and monitoring progress. I created a Virtual Machine (VM) with advanced security tools for organization-wide use, which enhanced my skills in threat analysis and cybersecurity.`,
     technologies: ["Leadership", "Cyber Defense Analyst", "Creative Thinking", "Team Collaboration"],
+    certificateurl: "https://drive.google.com/file/d/1ddfgWOtWut5dxNMmtxoBRLji5wWLZWEo/view?usp=sharing",
   },
 ];
 
