@@ -18,7 +18,7 @@ to continue growing, learning, and contributing to impactful projects.
 
 export const EXPERIENCES = [
   {
-    year: "2022 - Present",
+    year: "December 2022 - Present",
     role: "Coach | Social Media Team Graphic Designer | SAT Bootcamp Guide ",
     company: " Schoolhouse.world",
     description: `Led a team in developing and maintaining web applications using JavaScript, React.js, and Node.js. Implemented RESTful APIs and integrated with MongoDB databases. Collaborated with stakeholders to define project requirements and timelines.`,
