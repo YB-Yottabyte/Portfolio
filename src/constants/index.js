@@ -59,17 +59,17 @@ export const PROJECTS = [
     title: "Personal Finance Manager",
     image: project3,
     description:
-      "A Java-based Personal Finance Manager that allows users to log and manage expenses, set budgets, and store data persistently across sessions. Current features include adding, viewing, and removing expenses, with future enhancements planned for a React-based frontend and interactive graphical expense visualization using JavaFX.",
+      "Developed a Java-based Personal Finance Manager with persistent data storage, enabling users to track expenses and set budgets. Designed an intuitive JSwing interface for a smooth user experience. Planned future upgrades, including a React frontend and JavaFX integration for dynamic, interactive expense visualization.",
     technologies: ["Java", "Java Swing"],
     codeUrl: "https://github.com/YB-Yottabyte/personal-finance-manager",
     demoUrl: "https://youtu.be/nX4Pcbg-uWk?si=5a488vsHnDRlu3IV",
   },
 
   {
-    title: "Modern UI-UX",
+    title: "NextGen React UI",
     image: project2,
     description:
-      "I have built a responsive web application using React, featuring a stunning hero section, high-quality images, and appealing gradients.",
+      "Built a responsive web app with React, focusing on seamless UX/UI design. Created a visually appealing hero section with high-quality images and vibrant gradients. Enhanced React skills by developing interactive components and optimizing performance for mobile-first, cross-device compatibility.",
     technologies: ["React JS", "Framer Motion", "Tailwind CSS"],
     codeUrl: "https://github.com/YB-Yottabyte/Modern-UI-UX",
     demoUrl: "https://nextgenreact-ui.netlify.app/",
