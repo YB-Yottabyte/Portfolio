@@ -21,7 +21,7 @@ const Navbar = () => {
                 <a href="https://github.com/YB-Yottabyte" target="_blank" rel="noopener noreferrer">
                     <FaGithub className="text-2xl md:text-3xl text-gray-600 hover:text-gray-900" />
                 </a>
-                <a href="www.linkedin.com/in/sai-rithwik-kukunuri-b5084527b" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.linkedin.com/in/sai-rithwik-kukunuri-b5084527b" target="_blank" rel="noopener noreferrer">
                     <FaLinkedin className="text-2xl md:text-3xl text-blue-600 hover:text-blue-800" />
                 </a>
                 <a href="https://x.com/sairithwik2028" target="_blank" rel="noopener noreferrer">
