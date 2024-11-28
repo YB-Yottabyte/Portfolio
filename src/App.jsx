@@ -6,6 +6,9 @@ import Technologies from './components/Technologies'
 import Experience from './components/Experience'
 import Project from './components/Project'
 import Footer from './components/contact'
+import { inject } from '@vercel/analytics';
+ 
+inject();
 
 
 const App = () => {
@@ -31,5 +34,6 @@ const App = () => {
     </div>
   )
 }
+
 
 export default App
