@@ -62,7 +62,7 @@ export const PROJECTS = [
       "Developed a Java-based Personal Finance Manager with persistent data storage, enabling users to track expenses and set budgets. Designed an intuitive JSwing interface for a smooth user experience. Planned future upgrades, including a React frontend and JavaFX integration for dynamic, interactive expense visualization.",
     technologies: ["Java", "Java Swing"],
     codeUrl: "https://github.com/YB-Yottabyte/personal-finance-manager",
-    demoUrl: "https://youtu.be/nX4Pcbg-uWk?si=5a488vsHnDRlu3IV",
+    demoUrl: "https://youtu.be/mwBEBa20x2s?si=LVuUh-kdPYnmN6PT",
   },
 
   {
