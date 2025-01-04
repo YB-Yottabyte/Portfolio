@@ -25,6 +25,8 @@ const iconVariants = {
   },
 };
 
+
+
 const Technologies = () => {
   return (
     <div className="border-b border-neutral-800 pb-24">
