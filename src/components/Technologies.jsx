@@ -1,5 +1,5 @@
 import { FaReact, FaPython, FaJava } from "react-icons/fa";
-import { SiJavascript, SiTailwindcss, SiCss3, SiHtml5, SiPostgresql, SiCplusplus } from "react-icons/si";
+import { SiJavascript, SiTailwindcss, SiCss3, SiHtml5, SiPostgresql} from "react-icons/si";
 import { motion } from 'framer-motion';
 
 // Define container variant to stagger each icon's animation
@@ -78,9 +78,7 @@ const Technologies = () => {
         <motion.div variants={iconVariants} className="rounded-2xl border-4 border-neutral-800 p-4">
           <FaPython className="text-7xl text-blue-400" />
         </motion.div>
-
-        <motion.div variants={iconVariants} className="rounded-2xl border-4 border-neutral-800 p-4">
-          <SiCplusplus className="text-7xl text-purple-600" />
+        
         </motion.div>
       </motion.div>
     </div>
