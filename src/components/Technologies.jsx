@@ -78,8 +78,7 @@ const Technologies = () => {
         <motion.div variants={iconVariants} className="rounded-2xl border-4 border-neutral-800 p-4">
           <FaPython className="text-7xl text-blue-400" />
         </motion.div>
-        
-        </motion.div>
+
       </motion.div>
     </div>
   );
