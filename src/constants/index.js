@@ -2,7 +2,7 @@ import project1 from "../assets/Forecast-hub.mp4";
 import project2 from "../assets/modern-ui.mp4";
 import project3 from "../assets/Expense Manager.mp4";
 
-export const HERO_CONTENT = `Hi, I’m Sai Rithwik Kukunuri, an Honors undergraduate at Arizona State University majoring in Computer Science (Software Engineering) with a Minor in Data Science. I’m passionate about creating innovative software solutions, using data for impactful decision-making, and continuously improving my skills to solve real-world problems.`;
+export const HERO_CONTENT = `Hi, I’m Sai Rithwik Kukunuri, an Honors undergraduate at Arizona State University majoring in Computer Science (Software Engineering) with a Minor in Data Science and Business. I’m passionate about creating innovative software solutions, using data for impactful decision-making, and continuously improving my skills to solve real-world problems.`;
 
 export const ABOUT_TEXT = `
 I still remember the excitement of writing my very first program—it sparked a passion for coding and 
