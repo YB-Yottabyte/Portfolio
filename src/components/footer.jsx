@@ -1,61 +1,51 @@
-import React, { useEffect }  from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-
 import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
+import { useTheme } from '../context/ThemeContext';
+
+const FOOTER_SOCIALS = [
+  { href: 'https://github.com/YB-Yottabyte',                             icon: <FaGithub />,    color: '#6e5494', darkColor: '#a78bfa', label: 'GitHub' },
+  { href: 'https://www.linkedin.com/in/sai-rithwik-kukunuri-b5084527b', icon: <FaLinkedin />,  color: '#0a66c2', darkColor: '#38bdf8', label: 'LinkedIn' },
+  { href: 'https://x.com/sairithwik2028',                               icon: <FaXTwitter />,  color: '#111827', darkColor: '#e7e9ea', label: 'X' },
+  { href: 'https://www.instagram.com/sairithwikkukunuri/',              icon: <FaInstagram />, color: '#e1306c', darkColor: '#f472b6', label: 'Instagram' },
+]
 
 const Footer = () => {
-
-  useEffect(() => {
-    document.getElementById("year").textContent = new Date().getFullYear();
-  }, []);
-
+  const { isLight } = useTheme()
   return (
-    <footer className="border-t border-gray-700 py-8 px-4 md:px-10">
-      <div className="flex flex-col md:flex-row items-center justify-between">
-        
-        {/* Tagline */}
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: -100 }}
-          transition={{ duration: 1 }}
-          className="text-start md:w-2/3"
-        >
-          <h2 className="text-lg md:text-xl font-semibold text-white mb-2">
-            Building Connections Through Innovation and Collaboration
-          </h2>
-          <p className="text-sm text-gray-300">
-            A passion for creating, learning, and making a difference.
-          </p>
-          <p className='text-xs text-gray-200'>
-            © <span id='year' > </span>&nbsp;
-            Sai Rithwik Kukunuri. All rights reserved.
-          </p>
-        </motion.div>
+  <footer className="relative py-14 px-8 overflow-hidden" style={{ borderTop: isLight ? '1px solid rgba(0,0,0,0.07)' : '1px solid rgba(255,255,255,0.05)' }}>
+    <div className="relative z-10 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
 
-        {/* Social Icons */}
-        <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 1 }}
-          className="flex space-x-4 mt-6 md:mt-0 md:justify-end md:w-1/3"
-        >
-          <a href="https://github.com/YB-Yottabyte" target="_blank" rel="noopener noreferrer">
-            <FaGithub className="text-2xl md:text-3xl text-gray-400 hover:text-white transition-all duration-200" />
+      {/* Left */}
+      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.6 }}>
+        <div className="flex items-center gap-3 mb-3">
+          <div className="w-9 h-9 rounded-xl flex items-center justify-center font-black text-white text-lg"
+            style={{ background: 'linear-gradient(135deg,#7c3aed,#06b6d4)' }}>SK</div>
+          <span className="text-xl font-bold" style={{ color: isLight ? '#111827' : '#fff' }}>Sai Rithwik Kukunuri</span>
+        </div>
+        <p className="text-base mb-1" style={{ color: isLight ? '#6b7280' : '#64748b' }}>Building things that matter.</p>
+        <p className="text-sm" style={{ color: isLight ? '#9ca3af' : '#475569' }}>&copy; {new Date().getFullYear()} Sai Rithwik Kukunuri. All rights reserved.</p>
+      </motion.div>
+
+      {/* Right */}
+      <motion.div whileInView={{ opacity: 1, y: 0 }} initial={{ opacity: 0, y: 20 }} transition={{ duration: 0.6, delay: 0.1 }}
+        className="flex items-center gap-4">
+        {FOOTER_SOCIALS.map(({ href, icon, color, darkColor, label }) => (
+          <a key={label} href={href} target="_blank" rel="noopener noreferrer" title={label}
+            className="w-11 h-11 rounded-xl flex items-center justify-center text-xl transition-all duration-200 hover:scale-110"
+            style={{
+              color: isLight ? color : darkColor,
+              background: isLight ? 'rgba(0,0,0,0.04)' : 'rgba(255,255,255,0.05)',
+              border: isLight ? '1px solid rgba(0,0,0,0.07)' : '1px solid rgba(255,255,255,0.07)',
+            }}>
+            {icon}
           </a>
-          <a href="https://www.linkedin.com/in/sai-rithwik-kukunuri-b5084527b" target="_blank" rel="noopener noreferrer">
-            <FaLinkedin className="text-2xl md:text-3xl text-blue-500 hover:text-blue-300 transition-all duration-200" />
-          </a>
-          <a href="https://x.com/sairithwik2028" target="_blank" rel="noopener noreferrer">
-            <FaXTwitter className="text-2xl md:text-3xl text-blue-400 hover:text-blue-200 transition-all duration-200" />
-          </a>
-          <a href="https://www.instagram.com/sairithwikkukunuri/" target="_blank" rel="noopener noreferrer">
-            <FaInstagram className="text-2xl md:text-3xl text-pink-500 hover:text-pink-300 transition-all duration-200" />
-          </a>
-        </motion.div>
-      </div>
-    </footer>
-  );
-};
+        ))}
+      </motion.div>
+    </div>
+  </footer>
+  )
+}
 
 export default Footer;
