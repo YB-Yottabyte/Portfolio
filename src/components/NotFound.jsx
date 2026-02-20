@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import pikachuImg from '../assets/404.png'
+import pikachuImg from '/src/assets/404.png'
 
 const NotFound = () => {
   const navigate = useNavigate()
