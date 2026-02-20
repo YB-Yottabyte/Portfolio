@@ -2,33 +2,6 @@
 
 Welcome to my personal portfolio! This portfolio showcases the skills and projects I've been working on, primarily using React and modern web technologies.
 
-## Table of Contents
-- [About](#about)
-- [Technologies Used](#technologies-used)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
-
-## About
-
-ReactifyHub is a personal portfolio designed to highlight my skills and projects as a web developer. This portfolio is built using React, JavaScript, HTML, and CSS to provide a modern and responsive user experience.
-
-## Technologies Used
-
-- **JavaScript**: 78.8%
-- **HTML**: 19.5%
-- **CSS**: 1.7%
-
-## Features
-
-- Responsive design
-- Interactive project showcases
-- Smooth animations and transitions
-- Contact form
-
 ## Installation
 
 To run this project locally, follow these steps:
