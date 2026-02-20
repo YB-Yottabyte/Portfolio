@@ -24,7 +24,7 @@ const Footer = () => {
             style={{ background: 'linear-gradient(135deg,#7c3aed,#06b6d4)' }}>SK</div>
           <span className="text-xl font-bold" style={{ color: isLight ? '#111827' : '#fff' }}>Sai Rithwik Kukunuri</span>
         </div>
-        <p className="text-base mb-1" style={{ color: isLight ? '#6b7280' : '#64748b' }}>Building things that matter.</p>
+        <p className="text-base mb-1" style={{ color: isLight ? '#6b7280' : '#64748b' }}>Building things that matter</p>
         <p className="text-sm" style={{ color: isLight ? '#9ca3af' : '#475569' }}>&copy; {new Date().getFullYear()} Sai Rithwik Kukunuri. All rights reserved.</p>
       </motion.div>
 

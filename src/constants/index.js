@@ -15,7 +15,7 @@ export const EDUCATION = [
     school: "Arizona State University",
     gpa: "4.00",
     details: "Minor in Data Science · Google Developer Student Club (GDSC), Software Developers Association (SoDA)",
-    schoolUrl: "/404",
+    schoolUrl: "https://www.asu.edu/",
   },
   {
     year: "July 2022 – May 2024",
@@ -23,7 +23,7 @@ export const EDUCATION = [
     school: "Arizona College Preparatory High School",
     gpa: null,
     details: "National Honor Society, Science National Honor Society, Key Club",
-    schoolUrl: "/404",
+    schoolUrl: "https://acphs.cusd80.com/",
   },
 ];
 
@@ -135,7 +135,7 @@ export const PROJECTS = [
 export const EXPERIENCE_GROUPS = [
   {
     company: "Google Developer Student Club (GDSC) — ASU",
-    companyUrl: "/404",
+    companyUrl: "https://www.asudsc.com/",
     color: "from-green-500 to-blue-500",
     logoKey: "gdsc",
     roles: [
@@ -149,7 +149,7 @@ export const EXPERIENCE_GROUPS = [
   },
   {
     company: "Software Developers Association (SoDA) — ASU",
-    companyUrl: "/404",
+    companyUrl: "https://thesoda.io/",
     color: "from-violet-500 to-fuchsia-500",
     logoKey: "soda",
     roles: [
@@ -177,7 +177,7 @@ export const EXPERIENCE_GROUPS = [
   },
   {
     company: "Schoolhouse.world",
-    companyUrl: "/404",
+    companyUrl: "https://schoolhouse.world/transcript/b67611be-9637-45bb-af2e-21e57d6e36b9",
     color: "from-cyan-500 to-emerald-500",
     logoKey: "schoolhouse",
     roles: [
