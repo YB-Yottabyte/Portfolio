@@ -7,7 +7,7 @@ import gdscLogo from '../assets/Education/GDSC.png'
 import sodaLogo from '../assets/Education/SoDA.png'
 import excelerateLogo from '../assets/Education/excelerate.png'
 import schoolhouseLogo from '../assets/Education/schoolhouse.world.png'
-import epicsLogo from '../assets/Education/asu.png'
+import epicsLogo from '../assets/Education/epics.png'
 
 const logoMap = {
   gdsc: gdscLogo,
