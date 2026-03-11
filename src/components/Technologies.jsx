@@ -1,7 +1,8 @@
-import { FaReact, FaPython, FaJava, FaNodeJs, FaGitAlt, FaDocker, FaAws } from "react-icons/fa";
+import { FaReact, FaPython, FaJava, /* FaNodeJs, */ FaGitAlt, /* FaDocker, */ FaAws } from "react-icons/fa";
 import { SiJavascript, SiTailwindcss, SiCss3, SiHtml5, SiPostgresql, SiTypescript,
-  SiMongodb, SiFirebase, SiFigma, SiFlask, SiPandas, SiNumpy, SiScikitlearn,
-  SiGnubash, SiTensorflow, SiMysql, SiMicrosoftazure, SiTableau, SiPytorch, SiCplusplus} from "react-icons/si";
+  /* SiMongodb, */ SiFirebase, SiFigma, /* SiFlask, */ SiPandas, SiNumpy, SiScikitlearn,
+  /* SiGnubash, */ SiTensorflow, /* SiMysql, */ /* SiMicrosoftazure, */ SiTableau, SiPytorch, SiCplusplus,
+  SiCsharp, SiNextdotjs, SiSpringboot, SiApachekafka} from "react-icons/si";
 import { motion } from 'framer-motion';
 import { useTheme } from '../context/ThemeContext';
 
@@ -9,25 +10,31 @@ const CATEGORIES = [
   { label: 'Languages', items: [
     { Icon: FaPython,     color: '#3b82f6', label: 'Python' },
     { Icon: FaJava,       color: '#ef4444', label: 'Java' },
+    { Icon: SiCsharp,     color: '#512bd4', label: 'C#' },
     { Icon: SiCplusplus,  color: '#2563eb', label: 'C++' },
     { Icon: SiJavascript, color: '#facc15', label: 'JavaScript' },
     { Icon: SiTypescript, color: '#3b82f6', label: 'TypeScript' },
-    { Icon: SiGnubash,    color: '#4ade80', label: 'Bash' },
+    { Icon: SiHtml5,      color: '#f97316', label: 'HTML5' },
+    { Icon: SiCss3,       color: '#60a5fa', label: 'CSS3' },
+    // { Icon: SiGnubash,    color: '#4ade80', label: 'Bash' }, // not in resume
   ]},
   { label: 'Frontend', items: [
-    { Icon: FaReact,       color: '#38bdf8', label: 'React' },
-    { Icon: SiHtml5,       color: '#f97316', label: 'HTML5' },
-    { Icon: SiCss3,        color: '#60a5fa', label: 'CSS3' },
-    { Icon: SiTailwindcss, color: '#22d3ee', label: 'Tailwind' },
+    { Icon: FaReact,        color: '#38bdf8', label: 'React' },
+    { Icon: SiTailwindcss,  color: '#22d3ee', label: 'Tailwind CSS' },
+    { Icon: SiNextdotjs,    color: '#94a3b8', label: 'Next.js' },
+    // { Icon: SiHtml5,       color: '#f97316', label: 'HTML5' }, // moved to Languages
+    // { Icon: SiCss3,        color: '#60a5fa', label: 'CSS3' },  // moved to Languages
   ]},
   { label: 'Backend & Databases', items: [
-    { Icon: FaNodeJs,     color: '#4ade80', label: 'Node.js' },
-    { Icon: SiFlask,      color: '#94a3b8', label: 'Flask' },
-    { Icon: SiPostgresql, color: '#34d399', label: 'PostgreSQL' },
-    { Icon: SiMysql,      color: '#f97316', label: 'MySQL' },
-    { Icon: SiMongodb,    color: '#4ade80', label: 'MongoDB' },
+    { Icon: SiSpringboot,   color: '#6db33f', label: 'Spring Boot' },
+    { Icon: SiApachekafka,  color: '#94a3b8', label: 'Kafka' },
+    { Icon: SiPostgresql,   color: '#34d399', label: 'PostgreSQL' },
+    // { Icon: FaNodeJs,     color: '#4ade80', label: 'Node.js' },  // not in resume
+    // { Icon: SiFlask,      color: '#94a3b8', label: 'Flask' },    // not in resume
+    // { Icon: SiMysql,      color: '#f97316', label: 'MySQL' },    // not in resume
+    // { Icon: SiMongodb,    color: '#4ade80', label: 'MongoDB' },  // not in resume
   ]},
-  { label: 'AI / Data Science', items: [
+  { label: 'Machine Learning', items: [
     { Icon: SiTensorflow,  color: '#f97316', label: 'TensorFlow' },
     { Icon: SiPytorch,     color: '#ef4444', label: 'PyTorch' },
     { Icon: SiScikitlearn, color: '#f97316', label: 'Scikit-learn' },
@@ -35,34 +42,38 @@ const CATEGORIES = [
     { Icon: SiNumpy,       color: '#60a5fa', label: 'NumPy' },
   ]},
   { label: 'Cloud & Tools', items: [
-    { Icon: FaAws,            color: '#fb923c', label: 'AWS' },
-    { Icon: SiMicrosoftazure, color: '#38bdf8', label: 'Azure' },
-    { Icon: SiTableau,        color: '#60a5fa', label: 'Tableau' },
-    { Icon: FaGitAlt,         color: '#f97316', label: 'Git' },
-    { Icon: FaDocker,         color: '#38bdf8', label: 'Docker' },
-    { Icon: SiFigma,          color: '#a78bfa', label: 'Figma' },
-    { Icon: SiFirebase,       color: '#fb923c', label: 'Firebase' },
+    { Icon: FaAws,      color: '#fb923c', label: 'AWS' },
+    { Icon: FaGitAlt,   color: '#f97316', label: 'Git' },
+    { Icon: SiFirebase, color: '#fb923c', label: 'Firebase' },
+    { Icon: SiTableau,  color: '#60a5fa', label: 'Tableau' },
+    { Icon: SiFigma,    color: '#a78bfa', label: 'Figma' },
+    // { Icon: SiMicrosoftazure, color: '#38bdf8', label: 'Azure' },  // not in resume
+    // { Icon: FaDocker,         color: '#38bdf8', label: 'Docker' },  // not in resume
   ]},
 ]
 
 const BUBBLES = [
-  { Icon: FaPython,         color: '#3b82f6', size: 28 },
-  { Icon: FaReact,          color: '#38bdf8', size: 32 },
-  { Icon: SiJavascript,     color: '#facc15', size: 26 },
-  { Icon: SiTensorflow,     color: '#f97316', size: 30 },
-  { Icon: SiPytorch,        color: '#ef4444', size: 26 },
-  { Icon: FaAws,            color: '#fb923c', size: 28 },
-  { Icon: SiMicrosoftazure, color: '#38bdf8', size: 24 },
-  { Icon: SiTypescript,     color: '#3b82f6', size: 26 },
-  { Icon: SiPostgresql,     color: '#34d399', size: 24 },
-  { Icon: SiMysql,          color: '#f97316', size: 26 },
-  { Icon: SiTableau,        color: '#60a5fa', size: 24 },
-  { Icon: SiScikitlearn,    color: '#f97316', size: 22 },
-  { Icon: SiPandas,         color: '#a78bfa', size: 24 },
-  { Icon: FaDocker,         color: '#38bdf8', size: 26 },
-  { Icon: SiFigma,          color: '#a78bfa', size: 24 },
-  { Icon: SiGnubash,        color: '#4ade80', size: 22 },
-  { Icon: SiCplusplus,      color: '#2563eb', size: 20 },
+  { Icon: FaPython,      color: '#3b82f6', size: 28 },
+  { Icon: FaReact,       color: '#38bdf8', size: 32 },
+  { Icon: SiJavascript,  color: '#facc15', size: 26 },
+  { Icon: SiTensorflow,  color: '#f97316', size: 30 },
+  { Icon: SiPytorch,     color: '#ef4444', size: 26 },
+  { Icon: FaAws,         color: '#fb923c', size: 28 },
+  { Icon: SiTypescript,  color: '#3b82f6', size: 26 },
+  { Icon: SiPostgresql,  color: '#34d399', size: 24 },
+  { Icon: SiSpringboot,  color: '#6db33f', size: 26 },
+  { Icon: SiApachekafka, color: '#94a3b8', size: 24 },
+  { Icon: SiTableau,     color: '#60a5fa', size: 24 },
+  { Icon: SiScikitlearn, color: '#f97316', size: 22 },
+  { Icon: SiPandas,      color: '#a78bfa', size: 24 },
+  { Icon: SiNextdotjs,   color: '#94a3b8', size: 26 },
+  { Icon: SiFigma,       color: '#a78bfa', size: 24 },
+  { Icon: SiCsharp,      color: '#512bd4', size: 22 },
+  { Icon: SiCplusplus,   color: '#2563eb', size: 20 },
+  // { Icon: SiMicrosoftazure, color: '#38bdf8', size: 24 }, // not in resume
+  // { Icon: FaDocker,         color: '#38bdf8', size: 26 }, // not in resume
+  // { Icon: SiMysql,          color: '#f97316', size: 26 }, // not in resume
+  // { Icon: SiGnubash,        color: '#4ade80', size: 22 }, // not in resume
 ]
 
 const Technologies = () => {
