@@ -1,0 +1,60 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="180" y1="120" x2="1440" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E1B4B"/>
+      <stop offset="0.52" stop-color="#312E81"/>
+      <stop offset="1" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="260" y1="210" x2="1280" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F472B6"/>
+      <stop offset="0.45" stop-color="#A855F7"/>
+      <stop offset="1" stop-color="#38BDF8"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1260 180) rotate(133.203) scale(460 560)">
+      <stop stop-color="#38BDF8" stop-opacity="0.48"/>
+      <stop offset="1" stop-color="#38BDF8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(260 840) rotate(-12.202) scale(520 340)">
+      <stop stop-color="#F472B6" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#F472B6" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" rx="40" fill="url(#bg)"/>
+  <rect width="1600" height="1000" rx="40" fill="url(#glowA)"/>
+  <rect width="1600" height="1000" rx="40" fill="url(#glowB)"/>
+  <rect x="76" y="70" width="1448" height="860" rx="32" fill="rgba(15,23,42,0.38)" stroke="rgba(255,255,255,0.14)"/>
+  <rect x="120" y="112" width="1360" height="60" rx="18" fill="rgba(255,255,255,0.06)"/>
+  <circle cx="164" cy="142" r="8" fill="#F87171"/>
+  <circle cx="192" cy="142" r="8" fill="#FBBF24"/>
+  <circle cx="220" cy="142" r="8" fill="#4ADE80"/>
+  <rect x="270" y="126" width="360" height="32" rx="16" fill="rgba(255,255,255,0.08)"/>
+  <text x="140" y="254" fill="#E2E8F0" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5">PYTHON DEBUGGING PROJECT</text>
+  <text x="140" y="360" fill="white" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="800">Game Glitch</text>
+  <text x="140" y="440" fill="url(#accent)" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="800">Investigator</text>
+  <text x="140" y="520" fill="#CBD5E1" font-family="Inter, Arial, sans-serif" font-size="28">Intentional bugs, AI-assisted debugging, and test-driven repairs in a Streamlit game.</text>
+  <g>
+    <rect x="140" y="590" width="260" height="94" rx="22" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="174" y="630" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2">TEST COVERAGE</text>
+    <text x="174" y="668" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">26 passing tests</text>
+  </g>
+  <g>
+    <rect x="426" y="590" width="270" height="94" rx="22" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="460" y="630" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2">STACK</text>
+    <text x="460" y="668" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">Streamlit + Pytest</text>
+  </g>
+  <g>
+    <rect x="722" y="590" width="296" height="94" rx="22" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="756" y="630" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2">FOCUS</text>
+    <text x="756" y="668" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800">Responsible AI workflows</text>
+  </g>
+  <rect x="1050" y="250" width="338" height="490" rx="30" fill="rgba(15,23,42,0.72)" stroke="rgba(255,255,255,0.12)"/>
+  <text x="1092" y="316" fill="#F8FAFC" font-family="JetBrains Mono, Inter, monospace" font-size="24" font-weight="700">debug checklist</text>
+  <text x="1092" y="382" fill="#38BDF8" font-family="JetBrains Mono, Inter, monospace" font-size="24">01  reproduce issues</text>
+  <text x="1092" y="434" fill="#F472B6" font-family="JetBrains Mono, Inter, monospace" font-size="24">02  inspect logic</text>
+  <text x="1092" y="486" fill="#C084FC" font-family="JetBrains Mono, Inter, monospace" font-size="24">03  patch defects</text>
+  <text x="1092" y="538" fill="#F8FAFC" font-family="JetBrains Mono, Inter, monospace" font-size="24">04  verify with pytest</text>
+  <text x="1092" y="590" fill="#94A3B8" font-family="JetBrains Mono, Inter, monospace" font-size="24">05  document tradeoffs</text>
+  <rect x="1092" y="640" width="236" height="44" rx="14" fill="rgba(255,255,255,0.08)"/>
+  <text x="1120" y="668" fill="#E2E8F0" font-family="JetBrains Mono, Inter, monospace" font-size="20">high score tracker</text>
+  <text x="120" y="874" fill="#94A3B8" font-family="Inter, Arial, sans-serif" font-size="22" letter-spacing="4">BUG HUNT • REPAIR • TEST • REFLECT</text>
+</svg>

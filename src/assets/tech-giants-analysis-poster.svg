@@ -1,0 +1,64 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="180" y1="120" x2="1410" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111827"/>
+      <stop offset="0.48" stop-color="#1F2937"/>
+      <stop offset="1" stop-color="#431407"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="180" y1="220" x2="1240" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FCD34D"/>
+      <stop offset="0.5" stop-color="#FB923C"/>
+      <stop offset="1" stop-color="#FB7185"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1320 160) rotate(145.852) scale(440 580)">
+      <stop stop-color="#F59E0B" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#F59E0B" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(320 840) rotate(-8.604) scale(500 300)">
+      <stop stop-color="#FB7185" stop-opacity="0.3"/>
+      <stop offset="1" stop-color="#FB7185" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" rx="40" fill="url(#bg)"/>
+  <rect width="1600" height="1000" rx="40" fill="url(#glowA)"/>
+  <rect width="1600" height="1000" rx="40" fill="url(#glowB)"/>
+  <rect x="76" y="70" width="1448" height="860" rx="32" fill="rgba(17,24,39,0.38)" stroke="rgba(255,255,255,0.12)"/>
+  <text x="136" y="218" fill="#FCD34D" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5">DATA ANALYSIS</text>
+  <text x="136" y="324" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">Tech Giants Revenue</text>
+  <text x="136" y="404" fill="url(#accent)" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800">&amp; Efficiency Analysis</text>
+  <text x="136" y="486" fill="#D1D5DB" font-family="Inter, Arial, sans-serif" font-size="28">Web-scraped company data, visual storytelling, and statistical comparison across major technology firms.</text>
+  <g>
+    <rect x="136" y="564" width="224" height="92" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="168" y="604" fill="#9CA3AF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2">TOOLS</text>
+    <text x="168" y="642" fill="#F9FAFB" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800">Pandas + Plotly</text>
+  </g>
+  <g>
+    <rect x="384" y="564" width="248" height="92" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="416" y="604" fill="#9CA3AF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2">DATA</text>
+    <text x="416" y="642" fill="#F9FAFB" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800">Web-scraped inputs</text>
+  </g>
+  <g>
+    <rect x="656" y="564" width="294" height="92" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="688" y="604" fill="#9CA3AF" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2">OUTPUT</text>
+    <text x="688" y="642" fill="#F9FAFB" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800">Insight-driven visuals</text>
+  </g>
+  <rect x="1020" y="170" width="402" height="628" rx="34" fill="rgba(15,23,42,0.7)" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="1066" y="236" width="310" height="220" rx="24" fill="rgba(255,255,255,0.04)"/>
+  <path d="M1100 410L1150 356L1200 386L1268 298L1330 330" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="1100" cy="410" r="10" fill="#FCD34D"/>
+  <circle cx="1150" cy="356" r="10" fill="#FB923C"/>
+  <circle cx="1200" cy="386" r="10" fill="#F97316"/>
+  <circle cx="1268" cy="298" r="10" fill="#FB7185"/>
+  <circle cx="1330" cy="330" r="10" fill="#FFFFFF"/>
+  <rect x="1066" y="502" width="310" height="36" rx="18" fill="rgba(255,255,255,0.06)"/>
+  <rect x="1066" y="558" width="268" height="36" rx="18" fill="rgba(255,255,255,0.06)"/>
+  <rect x="1066" y="614" width="292" height="36" rx="18" fill="rgba(255,255,255,0.06)"/>
+  <text x="1098" y="528" fill="#E5E7EB" font-family="JetBrains Mono, Inter, monospace" font-size="20">revenue per employee</text>
+  <text x="1098" y="584" fill="#E5E7EB" font-family="JetBrains Mono, Inter, monospace" font-size="20">regional performance</text>
+  <text x="1098" y="640" fill="#E5E7EB" font-family="JetBrains Mono, Inter, monospace" font-size="20">trend comparison</text>
+  <g>
+    <rect x="136" y="760" width="800" height="104" rx="28" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="176" y="806" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">Built to communicate analysis, not just generate charts.</text>
+    <text x="176" y="844" fill="#D1D5DB" font-family="Inter, Arial, sans-serif" font-size="24">Pairs cleaned data with visual explanation so the findings read clearly to non-technical audiences.</text>
+  </g>
+</svg>

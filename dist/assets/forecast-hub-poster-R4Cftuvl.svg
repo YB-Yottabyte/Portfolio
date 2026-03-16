@@ -1,0 +1,58 @@
+<svg width="1600" height="1000" viewBox="0 0 1600 1000" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="140" y1="100" x2="1450" y2="880" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#082F49"/>
+      <stop offset="0.45" stop-color="#0F766E"/>
+      <stop offset="1" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="240" y1="180" x2="1320" y2="780" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#67E8F9"/>
+      <stop offset="0.52" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#818CF8"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1320 140) rotate(136.612) scale(460 600)">
+      <stop stop-color="#67E8F9" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#67E8F9" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(340 840) rotate(-8.537) scale(540 320)">
+      <stop stop-color="#60A5FA" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="#60A5FA" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="1000" rx="40" fill="url(#bg)"/>
+  <rect width="1600" height="1000" rx="40" fill="url(#glowA)"/>
+  <rect width="1600" height="1000" rx="40" fill="url(#glowB)"/>
+  <rect x="76" y="70" width="1448" height="860" rx="32" fill="rgba(8,47,73,0.32)" stroke="rgba(255,255,255,0.12)"/>
+  <text x="136" y="216" fill="#BAE6FD" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="5">FRONTEND APP</text>
+  <text x="136" y="324" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="78" font-weight="800">Forecast Hub</text>
+  <text x="136" y="406" fill="#D1FAE5" font-family="Inter, Arial, sans-serif" font-size="30">Live weather search with responsive UI and API-driven forecasts.</text>
+  <g>
+    <rect x="136" y="522" width="232" height="92" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="168" y="562" fill="#A5F3FC" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2">API</text>
+    <text x="168" y="600" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800">OpenWeather</text>
+  </g>
+  <g>
+    <rect x="392" y="522" width="236" height="92" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="424" y="562" fill="#A5F3FC" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2">FOCUS</text>
+    <text x="424" y="600" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800">Responsive UI</text>
+  </g>
+  <g>
+    <rect x="652" y="522" width="248" height="92" rx="22" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="684" y="562" fill="#A5F3FC" font-family="Inter, Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="2">OUTPUT</text>
+    <text x="684" y="600" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="800">Current conditions</text>
+  </g>
+  <rect x="1016" y="166" width="410" height="650" rx="34" fill="rgba(15,23,42,0.68)" stroke="rgba(255,255,255,0.12)"/>
+  <rect x="1060" y="228" width="322" height="520" rx="30" fill="rgba(255,255,255,0.05)"/>
+  <circle cx="1220" cy="350" r="78" fill="url(#accent)"/>
+  <circle cx="1284" cy="328" r="30" fill="#F8FAFC" fill-opacity="0.88"/>
+  <path d="M1106 468C1106 433.758 1133.76 406 1168 406H1278C1327.71 406 1368 446.294 1368 496C1368 545.706 1327.71 586 1278 586H1170C1134.65 586 1106 557.346 1106 522V468Z" fill="rgba(255,255,255,0.12)"/>
+  <rect x="1100" y="636" width="242" height="34" rx="17" fill="rgba(255,255,255,0.08)"/>
+  <rect x="1100" y="686" width="196" height="34" rx="17" fill="rgba(255,255,255,0.08)"/>
+  <text x="1132" y="658" fill="#E0F2FE" font-family="JetBrains Mono, Inter, monospace" font-size="20">humidity 58%</text>
+  <text x="1132" y="708" fill="#E0F2FE" font-family="JetBrains Mono, Inter, monospace" font-size="20">wind 12 mph</text>
+  <g>
+    <rect x="136" y="738" width="804" height="112" rx="28" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="176" y="786" fill="#FFFFFF" font-family="Inter, Arial, sans-serif" font-size="30" font-weight="700">A small product focused on clarity, speed, and usable weather data.</text>
+    <text x="176" y="826" fill="#D1FAE5" font-family="Inter, Arial, sans-serif" font-size="24">Shows API integration and interface design without overcomplicating the experience.</text>
+  </g>
+</svg>

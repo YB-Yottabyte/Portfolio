@@ -1,6 +1,7 @@
-import project1 from "../assets/Forecast-hub.mp4";
-import project2 from "../assets/modern-ui.mp4";
 import project3 from "../assets/Expense Manager.mp4";
+import forecastHubPoster from "../assets/forecast-hub-poster.svg";
+import gameGlitchPoster from "../assets/game-glitch-investigator-poster.svg";
+import techGiantsPoster from "../assets/tech-giants-analysis-poster.svg";
 
 export const HERO_CONTENT = `Hi, I'm Sai Rithwik Kukunuri, a senior at Barrett, The Honors College at Arizona State University, majoring in Computer Science with a Minor in Data Science. Maintaining a 4.0 GPA while actively involved in GDSC and SoDA, I'm passionate about building impactful software, merging data-driven thinking with creative design, and continuously pushing the boundaries of what technology can achieve.`;
 
@@ -104,31 +105,68 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "Forecast-Hub",
-    image: project1,
-    description:
-      "Forecast Hub is a sleek weather app powered by an API, providing real-time updates on wind speed and humidity for any location you search. Stay informed and plan your activities with confidence!",
-    technologies: ["HTML", "CSS", "JavaScript", "Open Weather API"],
-    codeUrl: "/404",
-    demoUrl: "/404",
-  },
-  {
     title: "Personal Finance Manager",
+    featured: true,
+    category: "Desktop Product",
+    year: "2026",
     image: project3,
+    mediaType: "video",
     description:
-      "Developed a Java-based Personal Finance Manager with persistent data storage, enabling users to track expenses and set budgets. Designed an intuitive JSwing interface for a smooth user experience. Planned future upgrades, including a React frontend and JavaFX integration for dynamic, interactive expense visualization.",
-    technologies: ["Java", "Java Swing"],
-    codeUrl: "/404",
-    demoUrl: "/404",
+      "A polished Java desktop application for expense tracking, budgeting, and spending analytics. It combines a clean Swing interface with CSV import/export, persistent storage, chart-based insights, and a tested codebase that reads like a real product instead of a classroom prototype.",
+    highlights: ["42 automated tests", "Budget analytics dashboard", "CSV import/export workflow"],
+    technologies: ["Java 17", "Swing", "JFreeChart", "FlatLaf", "Maven"],
+    codeUrl: "https://github.com/YB-Yottabyte/personal-finance",
+    demoUrl: null,
+    ctaLabel: "View Repository",
+    accent: "from-emerald-400 via-cyan-400 to-blue-500",
   },
   {
-    title: "NextGen React UI",
-    image: project2,
+    title: "Game Glitch Investigator",
+    featured: false,
+    category: "Python Debugging Project",
+    year: "2026",
+    image: gameGlitchPoster,
+    mediaType: "image",
     description:
-      "Built a responsive web app with React, focusing on seamless UX/UI design. Created a visually appealing hero section with high-quality images and vibrant gradients. Enhanced React skills by developing interactive components and optimizing performance for mobile-first, cross-device compatibility.",
-    technologies: ["React JS", "Framer Motion", "Tailwind CSS"],
-    codeUrl: "/404",
-    demoUrl: "/404",
+      "A Streamlit-based guessing game designed around responsible AI-assisted debugging. The project documents bug analysis, repairs intentional logic flaws, adds robust pytest coverage, and shows how I use AI tools critically rather than blindly.",
+    highlights: ["26 passing tests", "Streamlit gameplay", "AI debugging reflection"],
+    technologies: ["Python", "Streamlit", "Pytest", "JSON"],
+    codeUrl: "https://github.com/YB-Yottabyte/Game-Glitch-Investigator",
+    demoUrl: null,
+    ctaLabel: "Explore Code",
+    accent: "from-fuchsia-400 via-violet-400 to-sky-400",
+  },
+  {
+    title: "Tech Giants Revenue & Efficiency Analysis",
+    featured: false,
+    category: "Data Analysis",
+    year: "2025",
+    image: techGiantsPoster,
+    mediaType: "image",
+    description:
+      "A data-focused analysis project that explores revenue efficiency across major technology companies using web-scraped data, statistical thinking, and visualization. It adds analytical depth to the portfolio and shows work beyond UI development.",
+    highlights: ["Web-scraped dataset", "Statistical analysis", "Visualization storytelling"],
+    technologies: ["Python", "Pandas", "Plotly", "Seaborn", "Jupyter"],
+    codeUrl: "https://github.com/YB-Yottabyte/Tech-Giants-Revenue-and-Efficiency-Analysis",
+    demoUrl: null,
+    ctaLabel: "Read Analysis",
+    accent: "from-amber-300 via-orange-400 to-rose-500",
+  },
+  {
+    title: "Forecast Hub",
+    featured: false,
+    category: "Frontend App",
+    year: "2025",
+    image: forecastHubPoster,
+    mediaType: "image",
+    description:
+      "A weather application focused on clean interaction design and quick access to live forecast details. It pulls location-based conditions from the OpenWeather API and packages them into a lightweight, responsive interface.",
+    highlights: ["Real-time weather search", "Responsive UI", "API-driven data"],
+    technologies: ["HTML", "CSS", "JavaScript", "OpenWeather API"],
+    codeUrl: "https://github.com/YB-Yottabyte/Forecast-Hub",
+    demoUrl: null,
+    ctaLabel: "View Project",
+    accent: "from-cyan-300 via-sky-400 to-indigo-500",
   },
 ];
 
