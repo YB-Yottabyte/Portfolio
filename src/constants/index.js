@@ -2,6 +2,12 @@ import project3 from "../assets/Expense Manager.mp4";
 import forecastHubPoster from "../assets/forecast-hub-poster.svg";
 import gameGlitchPoster from "../assets/game-glitch-investigator-poster.svg";
 import techGiantsPoster from "../assets/tech-giants-analysis-poster.svg";
+import gdscFamily from "../assets/Flyers/GDSC/Family.png";
+import gdscGemini from "../assets/Flyers/GDSC/Gemini.png";
+import gdscGo from "../assets/Flyers/GDSC/Go.png";
+import gdscRag from "../assets/Flyers/GDSC/RAG.png";
+import sodaAlumni from "../assets/Flyers/SoDA/Alumni Banquet.png";
+import sodaHire from "../assets/Flyers/SoDA/Hire.png";
 
 export const HERO_CONTENT = `Hi, I'm Sai Rithwik Kukunuri, a senior at Barrett, The Honors College at Arizona State University, majoring in Computer Science with a Minor in Data Science. Maintaining a 4.0 GPA while actively involved in GDSC and SoDA, I'm passionate about building impactful software, merging data-driven thinking with creative design, and continuously pushing the boundaries of what technology can achieve.`;
 
@@ -29,6 +35,14 @@ export const EDUCATION = [
 ];
 
 export const EXPERIENCES = [
+  {
+    year: "March 2026 – Present",
+    role: "Graphic Design Assistant",
+    company: "Thunderbird School of Global Management — ASU",
+    description: `Create digital and print marketing assets while applying brand guidelines and structured workflows. Collaborate with cross-functional teams to translate complex ideas into scalable visual content aligned with Thunderbird's global identity using Adobe Creative Suite, Figma, and Canva.`,
+    technologies: ["Adobe Creative Suite", "Figma", "Canva", "Brand Guidelines", "Cross-Functional Collaboration"],
+    certificateurl: "/404",
+  },
   {
     year: "September 2025 – Present",
     role: "Graphic Design Officer",
@@ -170,7 +184,84 @@ export const PROJECTS = [
   },
 ];
 
+export const DESIGN_FLYER_GROUPS = [
+  {
+    org: "Google Developer Student Club",
+    short: "GDSC",
+    logoKey: "gdsc",
+    color: "from-green-500 to-blue-500",
+    url: "https://www.asudsc.com/",
+    flyers: [
+      {
+        title: "Family Event Flyer",
+        image: gdscFamily,
+        category: "Collaboration Event",
+        tools: ["Figma"],
+        description: "Promotional flyer for a GDSC community family event, designed for warm tone, quick scannability, and broad audience appeal.",
+      },
+      {
+        title: "Go Programming Event",
+        image: gdscGo,
+        category: "Technical Workshop",
+        tools: ["Canva", "Adobe Creative Suite"],
+        description: "Event flyer for a Go language session, using strong contrast and structured layout to communicate topic and time clearly.",
+      },
+      {
+        title: "RAG Initiative",
+        image: gdscRag,
+        category: "Technical Workshop",
+        tools: ["Canva", "Adobe Creative Suite"],
+        description: "Flyer translating a technical AI concept (Retrieval-Augmented Generation) into approachable visuals aligned with GDSC branding.",
+      },
+      {
+        title: "Gemini AI Workshop",
+        image: gdscGemini,
+        category: "Technical Workshop",
+        tools: ["Canva"],
+        description: "Workshop flyer introducing Google's Gemini AI — balancing technical clarity with visual energy to attract student developers.",
+      },
+    ],
+  },
+  {
+    org: "Software Developers Association",
+    short: "SoDA",
+    logoKey: "soda",
+    color: "from-violet-500 to-fuchsia-500",
+    url: "https://thesoda.io/",
+    flyers: [
+      {
+        title: "Alumni Banquet",
+        image: sodaAlumni,
+        category: "Formal Event",
+        tools: ["Canva", "Adobe Creative Suite"],
+        description: "Elegant banquet flyer for SoDA's alumni event, using refined typography and a cohesive color palette suited to a professional audience.",
+      },
+      {
+        title: "Hire SoDA Members",
+        image: sodaHire,
+        category: "Recruitment",
+        tools: ["Canva", "Adobe Creative Suite"],
+        description: "Outward-facing recruitment flyer targeting companies, communicating SoDA's developer talent with a bold, professional layout.",
+      },
+    ],
+  },
+];
+
 export const EXPERIENCE_GROUPS = [
+  {
+    company: "Thunderbird School of Global Management — ASU",
+    companyUrl: "https://thunderbird.asu.edu/",
+    color: "from-sky-500 to-blue-500",
+    logoKey: "thunderbird",
+    roles: [
+      {
+        year: "March 2026 – Present",
+        role: "Graphic Design Assistant",
+        description: "Create digital and print marketing assets while applying brand guidelines and structured workflows. Collaborate with cross-functional teams to translate complex ideas into scalable visual content aligned with Thunderbird's global identity using Adobe Creative Suite, Figma, and Canva.",
+        technologies: ["Adobe Creative Suite", "Figma", "Canva", "Brand Guidelines", "Cross-Functional Collaboration"],
+      },
+    ],
+  },
   {
     company: "Google Developer Student Club (GDSC) — ASU",
     companyUrl: "https://www.asudsc.com/",

@@ -3,12 +3,19 @@ import { FaXTwitter } from "react-icons/fa6"
 import { SiAdobecreativecloud } from "react-icons/si"
 import { HiMoon, HiSun } from "react-icons/hi"
 import { useTheme } from "../context/ThemeContext"
+import { useLocation, useNavigate } from "react-router-dom"
 
-const NAV_LINKS = [
-  { label: 'Tech',      href: '#tech' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects',   href: '#projects' },
-  { label: 'Contact',    href: '#contact' },
+const HOME_NAV_LINKS = [
+  { label: 'Tech',        href: '#tech' },
+  { label: 'Experience',  href: '#experience' },
+  { label: 'Projects',    href: '#projects' },
+  { label: 'Design',      href: null, route: '/flyers' },
+  { label: 'Contact',     href: '#contact' },
+]
+
+const ROUTE_NAV_LINKS = [
+  { label: 'Home',   path: '/' },
+  { label: 'Design', path: '/flyers' },
 ]
 
 const scrollTo = (id) => {
@@ -29,6 +36,19 @@ const SOCIALS = [
 
 const Navbar = () => {
   const { isLight, toggle } = useTheme()
+  const location = useLocation()
+  const navigate = useNavigate()
+  const isHome = location.pathname === '/'
+
+  const handleLogoClick = (e) => {
+    e.preventDefault()
+    if (isHome) {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+      return
+    }
+    navigate('/')
+  }
+
   return (
     <nav
       className="sticky top-0 z-50 -mx-8 mb-0 px-8 py-3 flex items-center justify-between backdrop-blur-xl border-b transition-colors duration-300"
@@ -38,7 +58,7 @@ const Navbar = () => {
       }}
     >
       {/* Logo */}
-      <a href="#" className="flex items-center gap-2.5 group flex-shrink-0">
+      <a href="/" onClick={handleLogoClick} className="flex items-center gap-2.5 group flex-shrink-0">
         <div className="w-9 h-9 rounded-xl flex items-center justify-center font-black text-white text-base"
           style={{ background: 'linear-gradient(135deg,#7c3aed,#06b6d4)' }}>
           SK
@@ -51,23 +71,57 @@ const Navbar = () => {
 
       {/* Nav links - hidden on mobile */}
       <div className="hidden md:flex items-center gap-1">
-        {NAV_LINKS.map(({ label, href }) => (
-          <button key={label}
-            onClick={() => scrollTo(href.slice(1))}
-            className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer"
-            style={{ color: isLight ? '#6b7280' : '#94a3b8', background: 'transparent' }}
-            onMouseEnter={e => {
-              e.currentTarget.style.color = isLight ? '#111827' : '#fff'
-              e.currentTarget.style.background = isLight ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.07)'
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.color = isLight ? '#6b7280' : '#94a3b8'
-              e.currentTarget.style.background = 'transparent'
-            }}
-          >
-            {label}
-          </button>
-        ))}
+        {isHome ? (
+          <>
+            {HOME_NAV_LINKS.map(({ label, href, route }) => (
+              <button key={label}
+                onClick={() => route ? navigate(route) : scrollTo(href.slice(1))}
+                className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer"
+                style={{ color: isLight ? '#6b7280' : '#94a3b8', background: 'transparent' }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.color = isLight ? '#111827' : '#fff'
+                  e.currentTarget.style.background = isLight ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.07)'
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.color = isLight ? '#6b7280' : '#94a3b8'
+                  e.currentTarget.style.background = 'transparent'
+                }}
+              >
+                {label}
+              </button>
+            ))}
+          </>
+        ) : (
+          <>
+            {ROUTE_NAV_LINKS.map(({ label, path }) => {
+              const active = location.pathname === path
+              return (
+                <button key={label}
+                  onClick={() => navigate(path)}
+                  className="px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-200 cursor-pointer"
+                  style={{
+                    color: active ? (isLight ? '#111827' : '#fff') : (isLight ? '#6b7280' : '#94a3b8'),
+                    background: active
+                      ? (isLight ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.09)')
+                      : 'transparent'
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.color = isLight ? '#111827' : '#fff'
+                    e.currentTarget.style.background = isLight ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.07)'
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.color = active ? (isLight ? '#111827' : '#fff') : (isLight ? '#6b7280' : '#94a3b8')
+                    e.currentTarget.style.background = active
+                      ? (isLight ? 'rgba(0,0,0,0.05)' : 'rgba(255,255,255,0.09)')
+                      : 'transparent'
+                  }}
+                >
+                  {label}
+                </button>
+              )
+            })}
+          </>
+        )}
       </div>
 
       {/* Right: socials + toggle */}

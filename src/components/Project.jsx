@@ -69,7 +69,7 @@ const PreviewPanel = ({ project, accent, isLight, featured = false }) => {
             <FaLayerGroup className="text-[10px]" />
             {project.category}
           </div>
-          <div className="max-w-[14rem] text-2xl font-semibold leading-tight md:text-3xl" style={{ color: isLight ? '#0f172a' : '#f8fafc' }}>
+          <div className="max-w-[14rem] text-xl font-semibold leading-tight md:text-2xl" style={{ color: isLight ? '#0f172a' : '#f8fafc' }}>
             {project.title}
           </div>
         </div>
@@ -146,10 +146,10 @@ const FeaturedProjectCard = ({ project, index, isLight }) => {
             </div>
 
             <div>
-              <h3 className="max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl" style={{ color: isLight ? '#0f172a' : '#f8fafc' }}>
+              <h3 className="max-w-2xl text-2xl font-semibold tracking-tight md:text-3xl" style={{ color: isLight ? '#0f172a' : '#f8fafc' }}>
                 {project.title}
               </h3>
-              <p className="mt-4 max-w-2xl text-base leading-8 md:text-lg" style={{ color: isLight ? '#475569' : '#cbd5e1' }}>
+              <p className="mt-4 max-w-2xl text-sm leading-7 md:text-base" style={{ color: isLight ? '#475569' : '#cbd5e1' }}>
                 {project.description}
               </p>
             </div>
@@ -209,7 +209,7 @@ const ProjectCard = ({ project, index, isLight }) => {
         <PreviewPanel project={project} accent={accent} isLight={isLight} />
 
         <div>
-          <h3 className="text-xl font-semibold" style={{ color: isLight ? '#0f172a' : '#f8fafc' }}>{project.title}</h3>
+          <h3 className="text-lg font-semibold" style={{ color: isLight ? '#0f172a' : '#f8fafc' }}>{project.title}</h3>
           <p className="mt-3 text-sm leading-7" style={{ color: isLight ? '#475569' : '#cbd5e1' }}>{project.description}</p>
         </div>
 
@@ -257,7 +257,7 @@ const Project = () => {
           <p className="text-xs font-semibold uppercase tracking-[0.28em]" style={{ color: isLight ? '#64748b' : '#94a3b8' }}>
             Selected Work
           </p>
-          <h2 className="mt-4 text-3xl font-bold md:text-4xl" style={{ color: isLight ? '#111827' : '#fff' }}>
+          <h2 className="mt-4 text-2xl font-bold md:text-3xl" style={{ color: isLight ? '#111827' : '#fff' }}>
             Projects that show <span className="bg-gradient-to-r from-violet-400 to-cyan-400 bg-clip-text text-transparent">product thinking, engineering depth, and range</span>
           </h2>
           <p className="mt-4 text-sm leading-7 md:text-base" style={{ color: isLight ? '#6b7280' : '#94a3b8' }}>
@@ -276,28 +276,6 @@ const Project = () => {
         </div>
       </div>
 
-      <div className="mx-auto mt-8 max-w-6xl rounded-[1.75rem] px-6 py-5" style={subtlePanelStyle(isLight)}>
-        <div className="flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.24em]" style={{ color: isLight ? '#64748b' : '#94a3b8' }}>
-              Portfolio Lens
-            </p>
-            <p className="mt-2 text-sm leading-7" style={{ color: isLight ? '#475569' : '#cbd5e1' }}>
-              The section now favors signal over filler: stronger repo links, clearer project positioning, and cards that explain why each build matters.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 gap-3 text-sm md:min-w-[260px]">
-            <div className="rounded-2xl px-4 py-3" style={{ background: isLight ? 'rgba(255,255,255,0.8)' : 'rgba(15,23,42,0.66)' }}>
-              <div className="text-2xl font-semibold" style={{ color: isLight ? '#0f172a' : '#f8fafc' }}>{PROJECTS.length}</div>
-              <div style={{ color: isLight ? '#64748b' : '#94a3b8' }}>selected projects</div>
-            </div>
-            <div className="rounded-2xl px-4 py-3" style={{ background: isLight ? 'rgba(255,255,255,0.8)' : 'rgba(15,23,42,0.66)' }}>
-              <div className="text-2xl font-semibold" style={{ color: isLight ? '#0f172a' : '#f8fafc' }}>4</div>
-              <div style={{ color: isLight ? '#64748b' : '#94a3b8' }}>technical lanes</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
   )
 }

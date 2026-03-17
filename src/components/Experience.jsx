@@ -8,6 +8,7 @@ import sodaLogo from '../assets/Education/SoDA.png'
 import excelerateLogo from '../assets/Education/excelerate.png'
 import schoolhouseLogo from '../assets/Education/schoolhouse.world.png'
 import epicsLogo from '../assets/Education/epics.png'
+import thunderbirdLogo from '../assets/Education/Thunderbird.png'
 
 const logoMap = {
   gdsc: gdscLogo,
@@ -15,6 +16,7 @@ const logoMap = {
   excelerate: excelerateLogo,
   schoolhouse: schoolhouseLogo,
   epics: epicsLogo,
+  thunderbird: thunderbirdLogo,
 }
 
 const Experience = () => {
