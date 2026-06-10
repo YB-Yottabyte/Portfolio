@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sai Rithwik Kukunuri — ML / AI / Data</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=Space+Mono:wght@400;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/shared.css">
+  <style>
+    :root {
+      --accent: #FFC627;
+      --accent-bg: rgba(255,198,39,0.08);
+      --accent-glow: rgba(255,198,39,0.22);
+    }
+    .cursor { background: var(--accent); }
+    .cursor-ring { color: var(--accent); }
+    .hero-meta a:hover { color: var(--accent); }
+    .contact-card:hover { border-color: var(--accent); box-shadow: 0 8px 30px var(--accent-glow); }
+    .card:hover { border-color: rgba(255,198,39,0.24); box-shadow: 0 12px 40px rgba(255,198,39,0.08); }
+    .page-tag { background: rgba(255,198,39,0.1); color: var(--accent); border: 1px solid rgba(255,198,39,0.3); }
+    
+    /* Hero Download Button Adjustment */
+    .download-btn { 
+      background: linear-gradient(135deg, #FFC627, #FFD76A); 
+      color: #07080D; 
+      border: 1px solid rgba(255,255,255,0.22);
+      box-shadow: 0 8px 24px rgba(255,198,39,0.28);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.78rem 1.35rem;
+      border-radius: 12px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
+      margin-top: 0.5rem;
+      text-shadow: none;
+    }
+    .hero-meta a.download-btn,
+    .hero-meta a.download-btn:hover,
+    .download-btn span {
+      color: #07080D;
+    }
+    .download-btn:hover { background: linear-gradient(135deg, #FFD76A, #FFC627); box-shadow: 0 16px 40px rgba(255,198,39,0.38); transform: translateY(-2px); }
+
+    /* Code-style badges */
+    .tech-tag {
+      font-family: 'Space Mono', monospace;
+      font-size: 0.62rem; padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      background: rgba(255,198,39,0.1);
+      color: var(--accent);
+      border: 1px solid rgba(255,198,39,0.22);
+    }
+    .tech-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+
+    /* Terminal-style card header */
+    .terminal-bar {
+      display: flex; align-items: center; gap: 0.4rem;
+      margin-bottom: 1rem; padding-bottom: 0.8rem;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .t-dot { width: 8px; height: 8px; border-radius: 50%; }
+    .t-dot.r { background: #EF4444; }
+    .t-dot.y { background: #FFC627; }
+    .t-dot.g { background: #8C1D40; }
+    .t-label { font-family: 'Space Mono', monospace; font-size: 0.62rem; color: var(--warm-mid); margin-left: 0.5rem; }
+
+    /* Accuracy bar */
+    .accuracy-bar {
+      margin-top: 0.6rem;
+      display: flex; align-items: center; gap: 0.8rem;
+    }
+    .bar-track {
+      flex: 1; height: 4px; border-radius: 100px;
+      background: rgba(255,255,255,0.06); overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%; border-radius: 100px;
+      background: linear-gradient(90deg, #FFC627, #8C1D40);
+      animation: fillBar 1.5s 0.5s both;
+    }
+    @keyframes fillBar { from { width: 0%; } }
+    .bar-pct { font-family: 'Bebas Neue', sans-serif; font-size: 1.1rem; color: var(--accent); white-space: nowrap; }
+  </style>
+</head>
+<body>
+
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursor-ring"></div>
+<canvas id="bg-canvas"></canvas>
+<div class="noise"></div>
+
+<nav class="top-nav" aria-label="Primary navigation">
+  <a href="index.html" class="nav-brand">Sai Rithwik K.</a>
+  <div class="top-nav-links">
+    <a href="#experience" class="top-nav-link" data-section="experience">Experience</a>
+    <a href="#projects" class="top-nav-link" data-section="projects">Projects</a>
+    <a href="#education" class="top-nav-link" data-section="education">Education</a>
+    <a href="#skills" class="top-nav-link" data-section="skills">Skills</a>
+    <a href="#contact" class="top-nav-link" data-section="contact">Contact</a>
+  </div>
+</nav>
+
+<main>
+
+  <section id="hero" class="page-hero">
+    <span class="page-tag">ML · AI · Data Engineering</span>
+    <h1>Systems<br/><em>that Learn.</em></h1>
+    <div class="hero-meta">
+      <div class="meta-links">
+        <span class="meta-item"><span class="meta-icon" data-icon="location"></span>Phoenix, AZ</span>
+        <a href="mailto:skukunu1@asu.edu"><span class="meta-icon" data-icon="email"></span>skukunu1@asu.edu</a>
+        <a href="https://www.linkedin.com/in/rithwik0801" target="_blank"><span class="meta-icon" data-icon="linkedin"></span>LinkedIn</a>
+        <a href="https://github.com/ZB-ZettaByte" target="_blank"><span class="meta-icon" data-icon="github"></span>GitHub</a>
+      </div>
+      <div class="download-row">
+        <a href="assets/Sai_Rithwik_Kukunuri_Resume.pdf" target="_blank" rel="noopener" class="download-btn">
+          <span class="download-icon" data-icon="download">
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 3v10.2l3.6-3.6L17 11l-5 5-5-5 1.4-1.4 3.6 3.6V3h2zM5 19h14v2H5v-2z" fill="currentColor"/>
+            </svg>
+          </span><span>Download CV</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section observe">
+    <div class="section-label">About Me</div>
+    <div class="card about-card">
+      <div class="about-copy">
+        <p>I'm Sai Rithwik Kukunuri, a rising senior at Arizona State University, majoring in Computer Science with a minor in Data Science, Honors (4.00 GPA). My background spans software engineering, ML systems, full-stack development, and data engineering.</p>
+        <p>I've built full-stack and cloud-native applications, designed secure Java/JavaFX systems as a Software Engineering TA, developed a C# asset-management portal as an IT Intern with the City of Phoenix, and contributed to research in probabilistic circuits and LLM-based misinformation detection. I was also a co-winner of the OpenAI x ASU Student Success Spark Challenge.</p>
+        <p>I'm open to opportunities in Software Development, Research, Cloud Engineering, Quant, Data Analytics, Finance, and Marketing, intending to apply technology and strategy to create scalable, real-world impact.</p>
+      </div>
+      <div class="about-interests">
+        <div class="about-kicker">Areas of Interest</div>
+        <div class="interest-grid">
+          <span class="interest-item">Software Development</span>
+          <span class="interest-item">ML Systems</span>
+          <span class="interest-item">Cloud Engineering</span>
+          <span class="interest-item">Research</span>
+          <span class="interest-item">Quant</span>
+          <span class="interest-item">Data Analytics</span>
+          <span class="interest-item">Finance</span>
+          <span class="interest-item">Marketing Strategy</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="section observe">
+    <div class="section-label">Work Experience</div>
+
+    <div class="card role-card">
+      <div class="terminal-bar">
+        <div class="t-dot r"></div><div class="t-dot y"></div><div class="t-dot g"></div>
+        <span class="t-label">asu_teaching_assistant.java</span>
+      </div>
+      <div class="card-header role-header">
+        <div class="role-heading">
+          <div class="role-logo"><img src="assets/asu.png" alt="Arizona State University logo"></div>
+          <div>
+            <div class="card-title">Undergraduate Teaching Assistant</div>
+            <div class="card-sub">Arizona State University · Tempe, AZ</div>
+          </div>
+        </div>
+        <div class="card-date">May 2026 – Present</div>
+      </div>
+      <ul>
+        <li>Assist <strong class="hi">35+</strong> students in CSE 360 with software engineering concepts, project requirements, debugging, testing, and development tools.</li>
+        <li>Support Java and JavaFX projects in IntelliJ by helping students improve code quality, software design, implementation, and debugging.</li>
+        <li>Guide students on software engineering tools and practices, including JUnit testing, Astah UML diagrams, Jira, GitHub, and Scrum workflows.</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tech-tag">Java</span>
+        <span class="tech-tag">JavaFX</span>
+        <span class="tech-tag">JUnit</span>
+        <span class="tech-tag">Astah UML</span>
+        <span class="tech-tag">Jira</span>
+        <span class="tech-tag">GitHub</span>
+        <span class="tech-tag">Scrum</span>
+      </div>
+    </div>
+
+    <div class="card role-card">
+      <div class="terminal-bar">
+        <div class="t-dot r"></div><div class="t-dot y"></div><div class="t-dot g"></div>
+        <span class="t-label">ipid_traffic_security.py</span>
+      </div>
+      <div class="card-header role-header">
+        <div class="role-heading">
+          <div class="role-logo"><img src="assets/biodesign.png" alt="Biodesign Institute logo"></div>
+          <div>
+            <div class="card-title">IPv4 IPID Traffic Modeling and Network Security</div>
+            <div class="card-sub">Undergraduate Research Assistant · Biodesign Institute, ASU · Tempe, AZ</div>
+          </div>
+        </div>
+        <div class="card-date">Jan 2026 – Present</div>
+      </div>
+      <ul>
+        <li>Built a Python analysis pipeline with NumPy, SciPy, and Matplotlib to simulate bursty IPv4 network traffic and evaluate packet identifier behavior for network security analysis.</li>
+        <li>Compared traditional Poisson traffic assumptions against MMPP-based bursty traffic models to identify security risks missed by prior analysis.</li>
+        <li>Automated simulation, probability computation, and visualization workflows uncovering up to <strong class="hi">63×</strong> higher vulnerability under real-world traffic patterns.</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">NumPy</span>
+        <span class="tech-tag">SciPy</span>
+        <span class="tech-tag">Matplotlib</span>
+        <span class="tech-tag">Network Security</span>
+        <span class="tech-tag">MMPP</span>
+        <span class="tech-tag">Simulation</span>
+      </div>
+    </div>
+
+    <div class="card role-card">
+      <div class="terminal-bar">
+        <div class="t-dot r"></div><div class="t-dot y"></div><div class="t-dot g"></div>
+        <span class="t-label">medical_procedure_qa.tsx</span>
+      </div>
+      <div class="card-header role-header">
+        <div class="role-heading">
+          <div class="role-logo"><img src="assets/asu.png" alt="Arizona State University logo"></div>
+          <div>
+            <div class="card-title">AI-Powered Question Answering for Medical Procedures</div>
+            <div class="card-sub">Undergraduate Researcher · TEAL Lab, ASU · Tempe, AZ</div>
+          </div>
+        </div>
+        <div class="card-date">Jan 2026 – Present</div>
+      </div>
+      <ul>
+        <li>Built a multimodal medical Q&amp;A platform with Next.js, TypeScript, Flask, Qdrant, Groq APIs, and MedVidQA embeddings.</li>
+        <li>Used Qdrant vector search to return top-5 relevant video segments, reducing latency by <strong class="hi">30%</strong> and supporting <strong class="hi">70 tokens/sec</strong> inference.</li>
+        <li>Added text, image, voice, and video-frame inputs to return step-by-step answers with relevant video timestamps.</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tech-tag">Next.js</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">Qdrant</span>
+        <span class="tech-tag">Groq</span>
+        <span class="tech-tag">Vector Search</span>
+        <span class="tech-tag">MedVidQA</span>
+      </div>
+    </div>
+
+    <div class="card role-card">
+      <div class="terminal-bar">
+        <div class="t-dot r"></div><div class="t-dot y"></div><div class="t-dot g"></div>
+        <span class="t-label">aztech_data_integration.ts</span>
+      </div>
+      <div class="card-header role-header">
+        <div class="role-heading">
+          <div class="role-logo"><img src="assets/asu.png" alt="Arizona State University logo"></div>
+          <div>
+            <div class="card-title">Arizona Technology Council: Data Integration and Insights</div>
+            <div class="card-sub">Project Lead · Tempe, AZ</div>
+          </div>
+        </div>
+        <div class="card-date">Sep 2025 – Dec 2025</div>
+      </div>
+      <ul>
+        <li>Led a <strong class="hi">4-member</strong> team to build a full-stack data integration platform with React, TypeScript, Flask, REST APIs, and AWS.</li>
+        <li>Automated data collection and transfer between Arizona Technology Council’s two platforms, reducing reliance on manual workflows.</li>
+        <li>Owned system architecture, sprint planning, and documentation, improving team coordination within a <strong class="hi">$2,500</strong> project budget.</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">Flask</span>
+        <span class="tech-tag">REST APIs</span>
+        <span class="tech-tag">AWS</span>
+        <span class="tech-tag">Sprint Planning</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section observe">
+    <div class="section-label">Projects</div>
+
+    <div class="card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Bourse — AI Stock Research Platform</div>
+        </div>
+        <a class="card-date project-github" href="https://github.com/ZB-ZettaByte" target="_blank" rel="noopener"><span class="badge-icon" data-icon="github"></span>GitHub</a>
+      </div>
+      <ul>
+        <li>Built an AI stock research platform to analyze <strong class="hi">8,000+</strong> U.S. stocks using natural-language queries and live market data.</li>
+        <li>Developed a Groq-powered financial assistant using live prices, earnings, metrics, and news from Finnhub APIs.</li>
+        <li>Implemented a FastAPI and MongoDB backend aggregating quotes, charts, financials, and news from <strong class="hi">5+</strong> endpoints in under <strong class="hi">200ms</strong>.</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tech-tag">Next.js</span>
+        <span class="tech-tag">FastAPI</span>
+        <span class="tech-tag">MongoDB</span>
+        <span class="tech-tag">FAISS</span>
+        <span class="tech-tag">Groq</span>
+        <span class="tech-tag">Finnhub API</span>
+      </div>
+    </div>
+
+    <div class="card project-detail-card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Student Question and Answer System — Collaborative Learning Tool</div>
+        </div>
+        <a class="card-date project-github" href="https://github.com/ZB-ZettaByte" target="_blank" rel="noopener"><span class="badge-icon" data-icon="github"></span>GitHub</a>
+      </div>
+      <p class="project-description">Engineered a <strong class="hi">JavaFX</strong>-based collaborative Q&amp;A help system with multi-role access control for Students, Instructors, Admins, and Staff. Integrated an <strong class="hi">H2 SQL</strong> database for dynamic help article storage, retrieval, and permission-based content management, with secure credential handling through <strong class="hi">Bouncy Castle</strong>.</p>
+      <div class="project-kicker">Key Contributions</div>
+      <ul>
+        <li>Implemented <strong class="hi">OTP authentication</strong> and secure access protocols.</li>
+        <li>Created <strong class="hi">JUnit</strong> test suites to validate core application features.</li>
+        <li>Designed modular <strong class="hi">JavaFX</strong> components for authentication, content management, and user workflows.</li>
+        <li>Developed backup, restore, and article grouping features for organized help content management.</li>
+        <li>Led a <strong class="hi">5-member</strong> Scrum team through sprint planning, Git workflows, testing, and debugging.</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tech-tag">Java</span>
+        <span class="tech-tag">JavaFX</span>
+        <span class="tech-tag">SQL</span>
+        <span class="tech-tag">Git</span>
+        <span class="tech-tag">Eclipse</span>
+        <span class="tech-tag">Scrum</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="section observe">
+    <div class="section-label">Education</div>
+
+    <div class="edu-card">
+      <div class="edu-year">'27</div>
+      <div class="edu-logo">
+        <img src="assets/asu.png" alt="Arizona State University logo">
+      </div>
+      <div class="edu-body">
+        <div class="edu-school">Arizona State University</div>
+        <div class="edu-degree">Computer Science + Data Science · Barrett, The Honors College · Tempe, AZ</div>
+        <div class="edu-courses">Data Structures & Algorithms · Machine Learning · Systems Programming · Database Management · Data Engineering · Applied Statistics</div>
+      </div>
+    </div>
+
+    <div class="edu-card">
+      <div class="edu-year">'24</div>
+      <div class="edu-logo">
+        <img src="assets/acp.png" alt="Arizona College Preparatory High School logo">
+      </div>
+      <div class="edu-body">
+        <div class="edu-school">Arizona College Preparatory High School</div>
+        <div class="edu-degree">High School Diploma · Chandler, AZ</div>
+        <div class="edu-courses">Computer Science · Calculus · Statistics · Engineering Foundations · Honors/AP Coursework</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" class="section observe">
+    <div class="section-label">Technical Skills</div>
+    <div class="card">
+      <div style="display:flex; flex-direction:column; gap:1.2rem;">
+        <div>
+          <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.2em; color:var(--warm-mid); margin-bottom:0.6rem;">LANGUAGES</div>
+          <div class="skills-grid">
+            <span class="pill">JavaScript</span>
+            <span class="pill">TypeScript</span>
+            <span class="pill">Python</span>
+            <span class="pill">Java</span>
+            <span class="pill">C++</span>
+            <span class="pill">SQL</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.2em; color:var(--warm-mid); margin-bottom:0.6rem;">FRONTEND &amp; BACKEND</div>
+          <div class="skills-grid">
+            <span class="pill">React</span>
+            <span class="pill">Next.js</span>
+            <span class="pill">CSS</span>
+            <span class="pill">HTML</span>
+            <span class="pill">FastAPI</span>
+            <span class="pill">Flask</span>
+            <span class="pill">Spring Boot</span>
+            <span class="pill">PostgreSQL</span>
+            <span class="pill">MySQL</span>
+            <span class="pill">MongoDB</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.2em; color:var(--warm-mid); margin-bottom:0.6rem;">AI &amp; ML</div>
+          <div class="skills-grid">
+            <span class="pill">TensorFlow</span>
+            <span class="pill">PyTorch</span>
+            <span class="pill">Scikit-learn</span>
+            <span class="pill">NumPy</span>
+            <span class="pill">Groq</span>
+            <span class="pill">RAG pipelines</span>
+            <span class="pill">LangChain</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.2em; color:var(--warm-mid); margin-bottom:0.6rem;">CLOUD &amp; TOOLS</div>
+          <div class="skills-grid">
+            <span class="pill">AWS</span>
+            <span class="pill">Azure</span>
+            <span class="pill">Git</span>
+            <span class="pill">Docker</span>
+            <span class="pill">Figma</span>
+            <span class="pill">Linux</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section observe">
+    <div class="section-label">Get In Touch</div>
+    <div class="contact-grid">
+      <a href="mailto:skukunu1@asu.edu" class="contact-card">
+        <span class="contact-icon" data-icon="email"></span>
+        <div class="contact-info">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">skukunu1@asu.edu</span>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/rithwik0801" target="_blank" class="contact-card">
+        <span class="contact-icon" data-icon="linkedin"></span>
+        <div class="contact-info">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">rithwik0801</span>
+        </div>
+      </a>
+      <a href="https://github.com/ZB-ZettaByte" target="_blank" class="contact-card">
+        <span class="contact-icon" data-icon="github"></span>
+        <div class="contact-info">
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">ZB-ZettaByte</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<script src="js/shared.js"></script>
+<script type="module" src="js/react-icons.js"></script>
+<script>
+  initPage('#FFC627', 'rgba(255,198,39,0.1)', '#8C1D40');
+</script>
+</body>
+</html>
