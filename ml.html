@@ -96,10 +96,16 @@
 
 <nav class="top-nav" aria-label="Primary navigation">
   <a href="index.html" class="nav-brand">Sai Rithwik K.</a>
+  <button class="nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <div class="top-nav-links">
     <a href="#experience" class="top-nav-link" data-section="experience">Experience</a>
     <a href="#projects" class="top-nav-link" data-section="projects">Projects</a>
     <a href="#education" class="top-nav-link" data-section="education">Education</a>
+    <a href="#leadership" class="top-nav-link" data-section="leadership">Leadership</a>
     <a href="#skills" class="top-nav-link" data-section="skills">Skills</a>
     <a href="#contact" class="top-nav-link" data-section="contact">Contact</a>
   </div>
@@ -133,21 +139,21 @@
     <div class="section-label">About Me</div>
     <div class="card about-card">
       <div class="about-copy">
-        <p>I'm Sai Rithwik Kukunuri, a rising senior at Arizona State University, majoring in Computer Science with a minor in Data Science, Honors (4.00 GPA). My background spans software engineering, ML systems, full-stack development, and data engineering.</p>
-        <p>I've built full-stack and cloud-native applications, designed secure Java/JavaFX systems as a Software Engineering TA, developed a C# asset-management portal as an IT Intern with the City of Phoenix, and contributed to research in probabilistic circuits and LLM-based misinformation detection. I was also a co-winner of the OpenAI x ASU Student Success Spark Challenge.</p>
-        <p>I'm open to opportunities in Software Development, Research, Cloud Engineering, Quant, Data Analytics, Finance, and Marketing, intending to apply technology and strategy to create scalable, real-world impact.</p>
+        <p>I'm <strong class="hi">Sai Rithwik Kukunuri</strong>, a rising senior at Arizona State University, majoring in <strong class="hi">Computer Science</strong> with a minor in <strong class="hi">Data Science</strong>, Honors (4.00 GPA). My background spans software engineering, ML systems, full-stack development, and data engineering.</p>
+        <p>I've built full-stack and cloud-native applications, supported Java/JavaFX projects as a Software Engineering TA, and contributed to data science and network security research. My work includes developing web platforms, improving software workflows, working with data, and helping teams build reliable applications. I’m interested in creating practical software systems that are useful, scalable, and easy to understand.</p>
+        <p>I'm interested in <strong class="hi">Software Development</strong>, <strong class="hi">AI/ML Systems</strong>, <strong class="hi">Data Science</strong>, <strong class="hi">Cloud Engineering</strong>, <strong class="hi">Research</strong>, and <strong class="hi">Data Engineering</strong>. I focus on building scalable, practical tools that connect software, data, and real-world problem solving.</p>
       </div>
       <div class="about-interests">
         <div class="about-kicker">Areas of Interest</div>
         <div class="interest-grid">
           <span class="interest-item">Software Development</span>
-          <span class="interest-item">ML Systems</span>
+          <span class="interest-item">Full-Stack Development</span>
+          <span class="interest-item">Software Engineering</span>
+          <span class="interest-item">Web Development</span>
           <span class="interest-item">Cloud Engineering</span>
-          <span class="interest-item">Research</span>
-          <span class="interest-item">Quant</span>
           <span class="interest-item">Data Analytics</span>
-          <span class="interest-item">Finance</span>
-          <span class="interest-item">Marketing Strategy</span>
+          <span class="interest-item">Data Engineering</span>
+          <span class="interest-item">Database Systems</span>
         </div>
       </div>
     </div>
@@ -163,7 +169,7 @@
       </div>
       <div class="card-header role-header">
         <div class="role-heading">
-          <div class="role-logo"><img src="assets/asu.png" alt="Arizona State University logo"></div>
+          <div class="role-logo role-logo-asu"><img src="assets/asu.png" alt="Arizona State University logo"></div>
           <div>
             <div class="card-title">Undergraduate Teaching Assistant</div>
             <div class="card-sub">Arizona State University · Tempe, AZ</div>
@@ -194,7 +200,7 @@
       </div>
       <div class="card-header role-header">
         <div class="role-heading">
-          <div class="role-logo"><img src="assets/biodesign.png" alt="Biodesign Institute logo"></div>
+          <div class="role-logo role-logo-wide"><img src="assets/biodesign.png" alt="Biodesign Institute logo"></div>
           <div>
             <div class="card-title">IPv4 IPID Traffic Modeling and Network Security</div>
             <div class="card-sub">Undergraduate Research Assistant · Biodesign Institute, ASU · Tempe, AZ</div>
@@ -225,7 +231,7 @@
       </div>
       <div class="card-header role-header">
         <div class="role-heading">
-          <div class="role-logo"><img src="assets/asu.png" alt="Arizona State University logo"></div>
+          <div class="role-logo role-logo-asu"><img src="assets/asu.png" alt="Arizona State University logo"></div>
           <div>
             <div class="card-title">AI-Powered Question Answering for Medical Procedures</div>
             <div class="card-sub">Undergraduate Researcher · TEAL Lab, ASU · Tempe, AZ</div>
@@ -256,7 +262,7 @@
       </div>
       <div class="card-header role-header">
         <div class="role-heading">
-          <div class="role-logo"><img src="assets/asu.png" alt="Arizona State University logo"></div>
+          <div class="role-logo role-logo-asu"><img src="assets/asu.png" alt="Arizona State University logo"></div>
           <div>
             <div class="card-title">Arizona Technology Council: Data Integration and Insights</div>
             <div class="card-sub">Project Lead · Tempe, AZ</div>
@@ -283,17 +289,22 @@
   <section id="projects" class="section observe">
     <div class="section-label">Projects</div>
 
-    <div class="card">
+    <div class="card project-detail-card">
       <div class="card-header">
         <div>
           <div class="card-title">Bourse — AI Stock Research Platform</div>
         </div>
         <a class="card-date project-github" href="https://github.com/ZB-ZettaByte" target="_blank" rel="noopener"><span class="badge-icon" data-icon="github"></span>GitHub</a>
       </div>
+      <p class="project-description">Built a <strong class="hi">full-stack AI-powered stock research platform</strong> that helps users search, analyze, and understand U.S. stocks using live market data, company insights, financial news, and an integrated AI assistant. The platform combines a responsive <strong class="hi">Next.js</strong> frontend with a <strong class="hi">FastAPI</strong> backend to provide stock dashboards, semantic search, market tracking, and finance-focused AI responses powered by Groq and Finnhub APIs.</p>
+      <div class="project-kicker">Key Contributions</div>
       <ul>
-        <li>Built an AI stock research platform to analyze <strong class="hi">8,000+</strong> U.S. stocks using natural-language queries and live market data.</li>
-        <li>Developed a Groq-powered financial assistant using live prices, earnings, metrics, and news from Finnhub APIs.</li>
-        <li>Implemented a FastAPI and MongoDB backend aggregating quotes, charts, financials, and news from <strong class="hi">5+</strong> endpoints in under <strong class="hi">200ms</strong>.</li>
+        <li>Built a responsive stock research dashboard for searching and analyzing <strong class="hi">8,000+</strong> U.S. stocks using natural-language queries and live market data.</li>
+        <li>Developed a <strong class="hi">Groq-powered AI financial assistant</strong> that answers finance-related questions using stock prices, company metrics, earnings data, and market news.</li>
+        <li>Implemented backend APIs with <strong class="hi">FastAPI</strong> to aggregate quotes, charts, company profiles, financial statistics, and news from multiple Finnhub API endpoints.</li>
+        <li>Added semantic stock search using <strong class="hi">FAISS</strong>, allowing users to discover stocks through natural-language search instead of only ticker symbols.</li>
+        <li>Integrated live company and market news to help users track recent financial updates and stock-related events.</li>
+        <li>Designed a clean and responsive <strong class="hi">Next.js</strong> user interface for stock dashboards, market research, and AI-assisted analysis.</li>
       </ul>
       <div class="tech-tags">
         <span class="tech-tag">Next.js</span>
@@ -302,6 +313,8 @@
         <span class="tech-tag">FAISS</span>
         <span class="tech-tag">Groq</span>
         <span class="tech-tag">Finnhub API</span>
+        <span class="tech-tag">Python</span>
+        <span class="tech-tag">TypeScript</span>
       </div>
     </div>
 
@@ -342,7 +355,7 @@
       </div>
       <div class="edu-body">
         <div class="edu-school">Arizona State University</div>
-        <div class="edu-degree">Computer Science + Data Science · Barrett, The Honors College · Tempe, AZ</div>
+        <div class="edu-degree">Computer Science Major · Data Science Minor · Barrett, The Honors College · Tempe, AZ</div>
         <div class="edu-courses">Data Structures & Algorithms · Machine Learning · Systems Programming · Database Management · Data Engineering · Applied Statistics</div>
       </div>
     </div>
@@ -360,6 +373,62 @@
     </div>
   </section>
 
+  <section id="leadership" class="section observe">
+    <div class="section-label">Organizations &amp; Leadership</div>
+
+    <div class="card role-card">
+      <div class="card-header role-header">
+        <div class="role-heading">
+          <div class="role-logo org-logo"><img src="assets/GDSC.png" alt="Google Developer Student Club at ASU logo"></div>
+          <div>
+            <div class="card-title">Google Developer Student Club at ASU</div>
+            <div class="card-sub">Graphic Design Officer · Arizona State University</div>
+          </div>
+        </div>
+        <div class="card-date">Aug 2025 – Present</div>
+      </div>
+      <ul>
+        <li>Design digital branding and promotional materials for GDSC technical workshops and events, supporting outreach and student engagement.</li>
+        <li>Created visual content for developer workshops, improving event communication for a <strong class="hi">2,000+</strong> member community.</li>
+        <li>Recognized as a <strong class="hi">2026 Pitchfork Awards Finalist</strong> for contributions to student organization initiatives.</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tech-tag">Adobe Creative Suite</span>
+        <span class="tech-tag">Photoshop</span>
+        <span class="tech-tag">Illustrator</span>
+        <span class="tech-tag">Canva</span>
+        <span class="tech-tag">Figma</span>
+      </div>
+    </div>
+
+    <div class="card role-card">
+      <div class="card-header role-header">
+        <div class="role-heading">
+          <div class="role-logo org-logo"><img src="assets/SoDA.png" alt="The Software Developers Association at ASU logo"></div>
+          <div>
+            <div class="card-title">The Software Developers Association at ASU</div>
+            <div class="card-sub">Marketing Officer · Arizona State University</div>
+          </div>
+        </div>
+        <div class="card-date">Jan 2025 – Present</div>
+      </div>
+      <ul>
+        <li>Lead <strong class="hi">visual branding</strong> for SoDA events and initiatives, translating marketing goals into cohesive and engaging design assets.</li>
+        <li>Promote workshops and developer events for a <strong class="hi">3,000+</strong> member community through visual content that supports outreach and participation.</li>
+        <li>Develop and maintain organization website features with <strong class="hi">React</strong>, <strong class="hi">TypeScript</strong>, and <strong class="hi">Flask</strong>, improving usability and functionality.</li>
+      </ul>
+      <div class="tech-tags">
+        <span class="tech-tag">Adobe Creative Suite</span>
+        <span class="tech-tag">Photoshop</span>
+        <span class="tech-tag">Illustrator</span>
+        <span class="tech-tag">Canva</span>
+        <span class="tech-tag">React</span>
+        <span class="tech-tag">TypeScript</span>
+        <span class="tech-tag">Flask</span>
+      </div>
+    </div>
+  </section>
+
   <section id="skills" class="section observe">
     <div class="section-label">Technical Skills</div>
     <div class="card">
@@ -367,8 +436,8 @@
         <div>
           <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.2em; color:var(--warm-mid); margin-bottom:0.6rem;">LANGUAGES</div>
           <div class="skills-grid">
-            <span class="pill">JavaScript</span>
             <span class="pill">TypeScript</span>
+            <span class="pill">JavaScript</span>
             <span class="pill">Python</span>
             <span class="pill">Java</span>
             <span class="pill">C++</span>
@@ -376,12 +445,18 @@
           </div>
         </div>
         <div>
-          <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.2em; color:var(--warm-mid); margin-bottom:0.6rem;">FRONTEND &amp; BACKEND</div>
+          <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.2em; color:var(--warm-mid); margin-bottom:0.6rem;">FRONTEND</div>
           <div class="skills-grid">
             <span class="pill">React</span>
             <span class="pill">Next.js</span>
-            <span class="pill">CSS</span>
             <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">Figma</span>
+          </div>
+        </div>
+        <div>
+          <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.2em; color:var(--warm-mid); margin-bottom:0.6rem;">BACKEND &amp; DATABASES</div>
+          <div class="skills-grid">
             <span class="pill">FastAPI</span>
             <span class="pill">Flask</span>
             <span class="pill">Spring Boot</span>
@@ -391,26 +466,26 @@
           </div>
         </div>
         <div>
+          <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.2em; color:var(--warm-mid); margin-bottom:0.6rem;">CLOUD &amp; TOOLS</div>
+          <div class="skills-grid">
+            <span class="pill">Git</span>
+            <span class="pill">GitHub</span>
+            <span class="pill">Docker</span>
+            <span class="pill">AWS</span>
+            <span class="pill">Azure</span>
+            <span class="pill">Linux</span>
+          </div>
+        </div>
+        <div>
           <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.2em; color:var(--warm-mid); margin-bottom:0.6rem;">AI &amp; ML</div>
           <div class="skills-grid">
+            <span class="pill">Groq</span>
+            <span class="pill">RAG pipelines</span>
+            <span class="pill">LangChain</span>
             <span class="pill">TensorFlow</span>
             <span class="pill">PyTorch</span>
             <span class="pill">Scikit-learn</span>
             <span class="pill">NumPy</span>
-            <span class="pill">Groq</span>
-            <span class="pill">RAG pipelines</span>
-            <span class="pill">LangChain</span>
-          </div>
-        </div>
-        <div>
-          <div style="font-family:'Space Mono',monospace; font-size:0.6rem; letter-spacing:0.2em; color:var(--warm-mid); margin-bottom:0.6rem;">CLOUD &amp; TOOLS</div>
-          <div class="skills-grid">
-            <span class="pill">AWS</span>
-            <span class="pill">Azure</span>
-            <span class="pill">Git</span>
-            <span class="pill">Docker</span>
-            <span class="pill">Figma</span>
-            <span class="pill">Linux</span>
           </div>
         </div>
       </div>

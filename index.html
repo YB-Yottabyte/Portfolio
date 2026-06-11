@@ -24,6 +24,8 @@
       background: var(--ink);
       font-family: 'Outfit', sans-serif;
       cursor: none;
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
     }
 
     .cursor {
@@ -130,10 +132,47 @@
       background: var(--accent-gold);
       box-shadow: 0 8px 24px rgba(255,198,39,0.25);
     }
+    .landing-nav-toggle {
+      display: none;
+      width: 2.65rem;
+      height: 2.25rem;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 0.28rem;
+      border: 1px solid rgba(245,240,232,0.16);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.045);
+      color: var(--cream);
+      cursor: none;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .landing-nav-toggle span {
+      width: 1.05rem;
+      height: 2px;
+      border-radius: 999px;
+      background: currentColor;
+      transition: transform 0.2s, opacity 0.2s;
+    }
+    .landing-nav-toggle:hover {
+      color: var(--accent-gold);
+      border-color: var(--accent-gold);
+    }
+    .landing-nav.is-open .landing-nav-toggle span:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .landing-nav.is-open .landing-nav-toggle span:nth-child(2) {
+      opacity: 0;
+    }
+    .landing-nav.is-open .landing-nav-toggle span:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
 
     #landing {
       position: relative; z-index: 2;
-      width: 100vw; height: 100vh;
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100svh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -184,6 +223,7 @@
       letter-spacing: 0.25em;
       text-transform: uppercase;
       margin-top: 0.5rem;
+      overflow-wrap: anywhere;
     }
 
     .hero-college {
@@ -214,6 +254,7 @@
       color: rgba(245,240,232,0.76);
       letter-spacing: 0.08em;
       line-height: 1.5;
+      overflow-wrap: anywhere;
     }
 
     .hero-tagline {
@@ -317,6 +358,22 @@
     .hero-link:hover::before { opacity: 1; }
     .hero-link span {
       position: relative;
+      overflow-wrap: anywhere;
+    }
+
+    @media (hover: none), (pointer: coarse) {
+      html,
+      body,
+      .landing-brand,
+      .landing-nav-link,
+      .landing-nav-toggle,
+      .hero-link {
+        cursor: auto;
+      }
+      .cursor,
+      .cursor-ring {
+        display: none;
+      }
     }
 
     .scroll-hint {
@@ -348,29 +405,60 @@
         display: block;
       }
       .hero-photo {
-        display: none;
+        display: block;
+        width: clamp(145px, 42vw, 230px);
+        margin: 1.5rem auto 0;
       }
     }
 
     @media (max-width: 680px) {
+      html,
+      body {
+        height: auto;
+        min-height: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+      }
       .landing-nav {
         top: 0.75rem;
         width: calc(100% - 1.5rem);
-        align-items: flex-start;
-        flex-direction: column;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 0.55rem;
         padding: 0.7rem;
         border-radius: 20px;
       }
+      .landing-nav-toggle {
+        display: inline-flex;
+        margin-left: auto;
+      }
       .landing-nav-links {
         width: 100%;
-        overflow-x: auto;
-        justify-content: flex-start;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.25rem;
+        padding: 0.35rem;
+        border-radius: 16px;
       }
-      .landing-nav-link { font-size: 0.58rem; padding: 0.45rem 0.7rem; }
+      .landing-nav.is-open .landing-nav-links {
+        display: flex;
+      }
+      .landing-nav-link {
+        width: 100%;
+        font-size: 0.58rem;
+        padding: 0.68rem 0.85rem;
+      }
       #landing {
+        min-height: 100svh;
+        align-items: flex-start;
+        justify-content: center;
+        padding-top: 6.8rem;
+        padding-bottom: 2.5rem;
         padding-left: 1.25rem;
         padding-right: 1.25rem;
+        overflow: visible;
       }
       .hero-text { width: 100%; }
       .hero-name { font-size: clamp(3rem, 16vw, 5.4rem); }
@@ -380,6 +468,26 @@
         padding: 0.55rem 0.75rem;
       }
       .hero-link { width: 100%; justify-content: center; }
+      .hero-photo {
+        width: clamp(132px, 44vw, 190px);
+        margin-top: 1.25rem;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .landing-nav {
+        width: calc(100% - 1rem);
+      }
+      #landing {
+        padding-left: 0.9rem;
+        padding-right: 0.9rem;
+      }
+      .hero-name {
+        font-size: clamp(2.7rem, 16vw, 4.5rem);
+      }
+      .hero-college {
+        gap: 0.5rem;
+      }
     }
   </style>
 </head>
@@ -392,6 +500,11 @@
 
 <nav class="landing-nav" aria-label="Primary navigation">
   <a href="#landing" class="landing-brand">Sai Rithwik K.</a>
+  <button class="landing-nav-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
   <div class="landing-nav-links">
     <a href="#landing" class="landing-nav-link active">Home</a>
     <a href="ml.html#projects" class="landing-nav-link">Projects</a>
@@ -431,6 +544,24 @@
 
 <script>
 
+  const landingNav = document.querySelector('.landing-nav');
+  const landingNavToggle = document.querySelector('.landing-nav-toggle');
+
+  if (landingNav && landingNavToggle) {
+    landingNavToggle.addEventListener('click', () => {
+      const isOpen = landingNav.classList.toggle('is-open');
+      landingNavToggle.setAttribute('aria-expanded', String(isOpen));
+      landingNavToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    });
+
+    landingNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        landingNav.classList.remove('is-open');
+        landingNavToggle.setAttribute('aria-expanded', 'false');
+        landingNavToggle.setAttribute('aria-label', 'Open navigation menu');
+      });
+    });
+  }
 
   // ── CURSOR ─────────────────────────────────────────────────────
   const cursor = document.getElementById('cursor');

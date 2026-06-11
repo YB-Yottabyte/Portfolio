@@ -18,6 +18,8 @@ body {
   font-family: 'Outfit', sans-serif;
   cursor: none;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /* CURSOR */
@@ -95,6 +97,47 @@ body {
   color: #07080D;
   background: var(--accent);
   box-shadow: 0 8px 24px var(--accent-glow, rgba(255, 198, 39, 0.28));
+}
+.nav-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  display: none;
+  width: 2.65rem;
+  height: 2.25rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.28rem;
+  border: 1px solid rgba(245, 240, 232, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.045);
+  color: var(--cream);
+  padding: 0;
+  line-height: 0;
+  cursor: none;
+  flex-shrink: 0;
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+.nav-toggle span {
+  display: block;
+  width: 1.05rem;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 0.2s, opacity 0.2s;
+}
+.nav-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.top-nav.is-open .nav-toggle span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.top-nav.is-open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+.top-nav.is-open .nav-toggle span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
 }
 
 /* CANVAS */
@@ -265,9 +308,11 @@ main {
 .card-title {
   font-family: 'DM Serif Display', serif;
   font-size: 1.2rem; color: var(--cream);
+  overflow-wrap: anywhere;
 }
 .card-sub {
   font-size: 0.8rem; color: var(--warm-mid); margin-top: 0.2rem;
+  overflow-wrap: anywhere;
 }
 .card-date {
   font-family: 'Space Mono', monospace;
@@ -298,6 +343,7 @@ main {
   line-height: 1.75;
   color: rgba(245,240,232,0.78);
   margin: 0 0 1rem;
+  overflow-wrap: anywhere;
 }
 .project-kicker {
   font-family: 'Space Mono', monospace;
@@ -335,6 +381,11 @@ main {
 .project-detail-card ul li {
   font-size: 0.84rem;
   line-height: 1.6;
+  font-weight: 400;
+  color: rgba(245,240,232,0.72);
+}
+.project-detail-card ul li .hi {
+  font-weight: 700;
 }
 .project-detail-card .tech-tags {
   margin-top: 1rem;
@@ -346,13 +397,16 @@ main {
 .role-heading {
   display: flex;
   align-items: center;
-  gap: 0.95rem;
+  gap: clamp(0.85rem, 1.4vw, 1.35rem);
+  min-width: 0;
+}
+.role-heading > div {
   min-width: 0;
 }
 .role-logo {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
+  width: clamp(44px, 3.6vw, 56px);
+  height: clamp(44px, 3.6vw, 56px);
+  border-radius: clamp(14px, 1.2vw, 18px);
   display: grid;
   place-items: center;
   overflow: hidden;
@@ -366,6 +420,40 @@ main {
   object-fit: contain;
   display: block;
 }
+.role-logo-asu {
+  width: clamp(44px, 3.6vw, 56px);
+  height: clamp(44px, 3.6vw, 56px);
+  padding: clamp(0.28rem, 0.42vw, 0.38rem);
+}
+.role-logo-asu img {
+  width: 100%;
+  height: auto;
+  max-height: 72%;
+}
+.role-logo-wide {
+  width: clamp(62px, 3.8vw, 76px);
+  height: clamp(38px, 2.35vw, 46px);
+  padding: clamp(0.25rem, 0.35vw, 0.32rem);
+}
+.role-logo-wide img {
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+.org-logo {
+  width: 56px;
+  height: 56px;
+  padding: 0.35rem;
+  border-radius: 14px;
+}
+.org-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+#leadership .role-heading {
+  gap: 0.75rem;
+}
 .card ul {
   list-style: none; display: flex; flex-direction: column; gap: 0.7rem;
 }
@@ -373,6 +461,7 @@ main {
   font-size: 0.87rem; line-height: 1.7; color: rgba(245,240,232,0.82);
   padding-left: 1.3rem;
   position: relative;
+  overflow-wrap: anywhere;
 }
 .card ul li::before {
   content: '▸';
@@ -399,6 +488,8 @@ main {
   color: var(--cream);
   transition: border-color 0.2s, color 0.2s, background 0.2s, box-shadow 0.2s, transform 0.2s;
   cursor: default;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 .pill:hover {
   border-color: var(--accent);
@@ -528,6 +619,104 @@ main {
 .edu-degree { font-size: 0.82rem; color: var(--warm-mid); margin: 0.3rem 0 0.6rem; }
 .edu-courses { font-size: 0.78rem; color: rgba(245,240,232,0.5); line-height: 1.6; }
 
+@media (hover: none), (pointer: coarse) {
+  body,
+  .nav-brand,
+  .top-nav-link,
+  .project-github,
+  .contact-card,
+  .download-btn,
+  .nav-dot,
+  .nav-toggle {
+    cursor: auto;
+  }
+  .cursor,
+  .cursor-ring {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .top-nav {
+    top: 0.75rem;
+    width: calc(100% - 1.5rem);
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    padding: 0.7rem;
+    border-radius: 20px;
+  }
+  .nav-toggle {
+    display: inline-flex !important;
+    margin-left: auto;
+  }
+  .top-nav-links {
+    width: 100%;
+    display: none !important;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.25rem;
+    padding: 0.35rem;
+    border-radius: 16px;
+  }
+  .top-nav.is-open .top-nav-links {
+    display: flex !important;
+  }
+  .top-nav-link {
+    font-size: 0.58rem;
+    width: 100%;
+    padding: 0.68rem 0.85rem;
+    text-align: left;
+  }
+  .page-nav { display: none; }
+  main {
+    padding: 7rem 1.25rem 4rem;
+  }
+  .page-hero {
+    padding-top: 2.5rem;
+  }
+  .meta-links {
+    gap: 0.8rem 1rem;
+  }
+  .card,
+  .edu-card {
+    border-radius: 14px;
+    padding: 1.35rem;
+  }
+  .role-card {
+    padding-left: 1.35rem;
+  }
+  .role-logo {
+    width: clamp(40px, 7vw, 48px);
+    height: clamp(40px, 7vw, 48px);
+    border-radius: 12px;
+  }
+  .role-logo-wide {
+    width: clamp(60px, 13vw, 72px);
+    height: clamp(38px, 8vw, 46px);
+    padding: 0.25rem;
+  }
+  .role-logo-asu {
+    width: clamp(40px, 7vw, 48px);
+    height: clamp(40px, 7vw, 48px);
+    padding: 0.25rem;
+  }
+  .org-logo {
+    width: 50px;
+    height: 50px;
+    padding: 0.32rem;
+  }
+  .edu-logo {
+    width: clamp(56px, 12vw, 68px);
+    height: clamp(56px, 12vw, 68px);
+    border-radius: 16px;
+  }
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* SCROLL OBSERVER */
 .observe { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
 .observe.in-view { opacity: 1; transform: none; }
@@ -547,37 +736,97 @@ main {
 }
 .nav-dot.active { background: var(--accent); transform: scale(1.5); }
 
+@media (hover: none), (pointer: coarse) {
+  .nav-dot {
+    cursor: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .page-nav {
+    display: none;
+  }
+}
+
 @media (max-width: 600px) {
-  main { padding: 6.5rem 1rem 4rem; }
-  .top-nav {
-    top: 0.75rem;
-    width: calc(100% - 1.5rem);
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.55rem;
-    padding: 0.7rem;
-    border-radius: 20px;
+  main { padding: 7rem 1rem 4rem; }
+  .page-tag {
+    letter-spacing: 0.18em;
   }
-  .top-nav-links {
-    width: 100%;
-    overflow-x: auto;
-    justify-content: flex-start;
+  .page-hero h1 {
+    font-size: clamp(3rem, 18vw, 4.8rem);
   }
-  .top-nav-link { font-size: 0.58rem; padding: 0.45rem 0.7rem; }
-  .page-nav { display: none; }
+  .section {
+    margin-bottom: 3rem;
+  }
+  .section-label {
+    gap: 0.75rem;
+    letter-spacing: 0.22em;
+  }
+  .card,
+  .edu-card {
+    padding: 1.15rem;
+  }
   .about-card { gap: 1.25rem; }
-  .role-card { padding-left: 1.4rem; }
   .role-header {
     align-items: flex-start;
   }
   .role-heading {
     align-items: flex-start;
   }
-  .role-logo {
-    width: 42px;
-    height: 42px;
-  }
+  .role-logo { width: 38px; height: 38px; }
+  .role-logo-asu { width: 38px; height: 38px; padding: 0.22rem; }
+  .role-logo-wide { width: 60px; height: 38px; padding: 0.22rem; }
+  .org-logo { width: 44px; height: 44px; padding: 0.28rem; }
   .edu-card { flex-direction: column; }
   .edu-logo { width: 64px; height: 64px; border-radius: 16px; }
   .edu-year { font-size: 1.8rem; }
+  .project-kicker {
+    letter-spacing: 0.18em;
+  }
+  .skills-grid {
+    gap: 0.45rem;
+  }
+  .pill,
+  .interest-item {
+    font-size: 0.62rem;
+    padding: 0.32rem 0.7rem;
+  }
+}
+
+@media (max-width: 380px) {
+  main {
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
+  .top-nav {
+    width: calc(100% - 1rem);
+  }
+  .card,
+  .edu-card {
+    padding: 1rem;
+  }
+  .role-heading {
+    gap: 0.7rem;
+  }
+  .role-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+  }
+  .role-logo-wide {
+    width: 56px;
+    height: 36px;
+    padding: 0.2rem;
+  }
+  .role-logo-asu {
+    width: 36px;
+    height: 36px;
+    padding: 0.2rem;
+  }
+  .org-logo {
+    width: 44px;
+    height: 44px;
+    padding: 0.26rem;
+  }
 }

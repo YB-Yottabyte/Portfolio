@@ -141,6 +141,24 @@ function initPage(accentColor, accentBg, warmColor = '#8C1D40') {
   const sections = document.querySelectorAll('section[id]');
   const dots     = document.querySelectorAll('.nav-dot');
   const topLinks = document.querySelectorAll('.top-nav-link[data-section]');
+  const topNav = document.querySelector('.top-nav');
+  const navToggle = document.querySelector('.nav-toggle');
+
+  if (topNav && navToggle) {
+    navToggle.addEventListener('click', () => {
+      const isOpen = topNav.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+      navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    });
+
+    topNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        topNav.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.setAttribute('aria-label', 'Open navigation menu');
+      });
+    });
+  }
 
   const navObs = new IntersectionObserver(entries => {
     entries.forEach(e => {
