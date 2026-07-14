@@ -8,6 +8,7 @@ import {
   HiArrowUpRight,
   HiMapPin,
 } from "react-icons/hi2";
+import { assetPath } from "./asset-path";
 import styles from "./experience-section.module.css";
 
 type Experience = {
@@ -47,7 +48,7 @@ export const EXPERIENCES: Experience[] = [
     ],
     technologies: ["Adobe Creative Suite", "Figma", "Canva", "Brand Design"],
     visual: "design",
-    logo: "/images/Thunderbird.png",
+    logo: assetPath("images/Thunderbird.png"),
     logoCode: "TBIRD",
     link: null,
   },
@@ -69,7 +70,7 @@ export const EXPERIENCES: Experience[] = [
     ],
     technologies: ["Python", "MMPP", "Network Security", "Traffic Modeling"],
     visual: "research",
-    logo: "/images/biodesign.png",
+    logo: assetPath("images/biodesign.png"),
     logoCode: "ASU",
     link: null,
   },
@@ -91,7 +92,7 @@ export const EXPERIENCES: Experience[] = [
     ],
     technologies: ["Figma", "Adobe Creative Suite", "Event Branding", "Outreach"],
     visual: "design",
-    logo: "/images/GDSC.png",
+    logo: assetPath("images/GDSC.png"),
     logoCode: "GDSC",
     link: null,
   },
@@ -113,7 +114,7 @@ export const EXPERIENCES: Experience[] = [
     ],
     technologies: ["Figma", "Adobe Creative Suite", "Visual Branding", "Marketing"],
     visual: "design",
-    logo: "/images/SoDA.png",
+    logo: assetPath("images/SoDA.png"),
     logoCode: "SODA",
     link: null,
   },
@@ -135,7 +136,7 @@ export const EXPERIENCES: Experience[] = [
     ],
     technologies: ["Flask", "Spring Boot", "AWS", "REST APIs"],
     visual: "community",
-    logo: "/images/epics.jpg",
+    logo: assetPath("images/epics.jpg"),
     logoCode: "EPICS",
     link: null,
   },
@@ -157,7 +158,7 @@ export const EXPERIENCES: Experience[] = [
     ],
     technologies: ["Project Management", "Cybersecurity", "Risk Management", "Virtual Machines"],
     visual: "research",
-    logo: "/images/excelerate.png",
+    logo: assetPath("images/excelerate.png"),
     logoCode: "EXC",
     link: "https://www.linkedin.com/company/82636387/",
   },

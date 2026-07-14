@@ -1,12 +1,14 @@
 import type { NextConfig } from "next";
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const isProduction = process.env.NODE_ENV === "production";
+const basePath = isProduction ? "/portfolio" : "";
 
 const nextConfig: NextConfig = {
   // Produces a static `out` directory for GitHub Pages.
   output: "export",
   trailingSlash: true,
   basePath,
+  assetPrefix: isProduction ? "/portfolio/" : undefined,
   images: {
     // GitHub Pages cannot run Next.js' server-side image optimizer.
     unoptimized: true,

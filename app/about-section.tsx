@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import type { CSSProperties } from "react";
+import { assetPath } from "./asset-path";
 import styles from "./about-section.module.css";
 
 const PHOTO_FRAME = {
@@ -102,7 +103,7 @@ export function AboutSection() {
                 <span className={styles.photoIndex}>01</span>
                 <span className={styles.imageFrame}>
                   <Image
-                    src="/images/about.png"
+                    src={assetPath("images/about.png")}
                     alt="Sai Rithwik at an aviation museum"
                     width={1586}
                     height={992}

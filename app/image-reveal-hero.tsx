@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { assetPath } from "./asset-path";
 
 const NAV_LINKS = [
   { label: "About", href: "#about" },
@@ -346,7 +347,7 @@ export function ImageRevealHero() {
       <div className="hero__media" aria-hidden="true">
         <Image
           className="hero__image hero__image--blurred"
-          src="/image.png?hero=20260714"
+          src={assetPath("image.png?hero=20260714")}
           alt=""
           width={3000}
           height={2064}
@@ -357,7 +358,7 @@ export function ImageRevealHero() {
         <div ref={revealRef} className="hero__reveal-clip">
           <Image
             className="hero__image hero__image--reveal"
-            src="/image.png?hero=20260714"
+            src={assetPath("image.png?hero=20260714")}
             alt=""
             width={3000}
             height={2064}

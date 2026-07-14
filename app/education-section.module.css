@@ -96,7 +96,7 @@
   background:
     linear-gradient(90deg, rgb(7 12 9 / 92%) 0%, rgb(7 12 9 / 78%) 47%, rgb(7 12 9 / 62%) 100%),
     linear-gradient(180deg, rgb(7 12 9 / 12%), rgb(7 12 9 / 62%)),
-    url("/asu-tempe-gallery.jpg") center / cover no-repeat;
+    var(--education-background) center / cover no-repeat;
   content: "";
   opacity: 0.7;
   pointer-events: none;

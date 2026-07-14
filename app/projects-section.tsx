@@ -4,6 +4,7 @@ import { useState, type CSSProperties } from "react";
 import Image from "next/image";
 import { HiArrowRight, HiArrowUpRight, HiChevronDown } from "react-icons/hi2";
 import { SiGithub } from "react-icons/si";
+import { assetPath } from "./asset-path";
 import styles from "./projects-section.module.css";
 
 type Category = "Research" | "AI / ML" | "Full Stack" | "Data" | "Systems";
@@ -46,7 +47,7 @@ const PROJECTS: Project[] = [
     metricLabel: "Interactive visualizer",
     color: "#c3df6e",
     featured: true,
-    image: "/projects/stepwise-preview.png",
+    image: assetPath("projects/stepwise-preview.png"),
     link: "https://github.com/YB-Yottabyte/stepwise",
   },
   {
@@ -67,7 +68,7 @@ const PROJECTS: Project[] = [
     metricLabel: "Finance manager",
     color: "#e6b86a",
     featured: true,
-    image: "/projects/tally-preview.png",
+    image: assetPath("projects/tally-preview.png"),
     link: "https://github.com/YB-Yottabyte/Tally",
   },
   {
@@ -88,7 +89,7 @@ const PROJECTS: Project[] = [
     metricLabel: "Market research",
     color: "#76c7c0",
     featured: true,
-    image: "/projects/market-dashboard.png",
+    image: assetPath("projects/market-dashboard.png"),
     link: "https://github.com/YB-Yottabyte/Bourse",
   },
   {
@@ -109,7 +110,7 @@ const PROJECTS: Project[] = [
     metricLabel: "Training images",
     color: "#76c7c0",
     featured: true,
-    image: "/projects/BMD-45.png",
+    image: assetPath("projects/BMD-45.png"),
     link: "https://github.com/ZB-ZettaByte/bmd45-traffic-state-detection",
   },
   {

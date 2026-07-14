@@ -1,4 +1,6 @@
 import Image from "next/image";
+import type { CSSProperties } from "react";
+import { assetPath } from "./asset-path";
 import styles from "./education-section.module.css";
 
 const FOCUS_AREAS = [
@@ -15,6 +17,11 @@ export function EducationSection() {
       id="education"
       className={styles.section}
       aria-labelledby="education-title"
+      style={
+        {
+          "--education-background": `url("${assetPath("asu-tempe-gallery.jpg")}")`,
+        } as CSSProperties
+      }
     >
       <div className={styles.inner}>
         <header className={styles.sectionHeader}>
@@ -63,7 +70,7 @@ export function EducationSection() {
             <aside className={styles.identity} aria-label="ASU affiliation">
               <div className={styles.logoFrame}>
                 <Image
-                  src="/images/asu.png"
+                  src={assetPath("images/asu.png")}
                   alt="Arizona State University"
                   width={410}
                   height={331}
@@ -80,7 +87,7 @@ export function EducationSection() {
           <article className={styles.acpCard}>
             <div className={styles.acpLogo}>
               <Image
-                src="/images/acp.png"
+                src={assetPath("images/acp.png")}
                 alt="Arizona College Preparatory Erie Campus"
                 width={615}
                 height={650}
