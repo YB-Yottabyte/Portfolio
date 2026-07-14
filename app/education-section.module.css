@@ -1,0 +1,387 @@
+.section {
+  position: relative;
+  min-width: 0;
+  padding: clamp(5rem, 9vw, 8rem) var(--page-gutter);
+  overflow: clip;
+  border-bottom: 1px solid rgb(243 238 225 / 7%);
+  background:
+    radial-gradient(circle at 86% 28%, rgb(255 198 39 / 7%), transparent 24%),
+    linear-gradient(180deg, #080b09, #0a0e0b);
+  color: var(--cream);
+}
+
+.section::before {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgb(243 238 225 / 2.5%) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(243 238 225 / 2.5%) 1px, transparent 1px);
+  background-size: 4rem 4rem;
+  mask-image: linear-gradient(90deg, transparent 6%, #000 45%, transparent 96%);
+  pointer-events: none;
+  content: "";
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  max-width: var(--content-width);
+  margin-inline: auto;
+}
+
+.sectionHeader {
+  display: flex;
+  margin-bottom: clamp(2rem, 4vw, 3.25rem);
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.sectionHeader p {
+  color: #ffc627;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.sectionHeader h2 {
+  color: var(--cream);
+  font-family: var(--font-grotesk), sans-serif;
+  font-size: clamp(2.25rem, 4.2vw, 4.25rem);
+  font-weight: 380;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+}
+
+.sectionHeader h2 span {
+  color: #ffc627;
+}
+
+.recordTopline,
+.degreeBlock p,
+.metrics span,
+.focus p,
+.identityFooter,
+.acpContent > p,
+.acpFooter {
+  font-family: var(--font-geist-mono), monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.educationStack {
+  position: relative;
+  display: grid;
+}
+
+.record {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.32fr);
+  overflow: hidden;
+  border: 1px solid rgb(243 238 225 / 12%);
+  border-radius: clamp(1.25rem, 2.4vw, 2rem);
+  background: rgb(10 15 12 / 86%);
+  box-shadow: 0 2rem 5rem rgb(0 0 0 / 18%);
+  isolation: isolate;
+}
+
+.record::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgb(7 12 9 / 92%) 0%, rgb(7 12 9 / 78%) 47%, rgb(7 12 9 / 62%) 100%),
+    linear-gradient(180deg, rgb(7 12 9 / 12%), rgb(7 12 9 / 62%)),
+    url("/asu-tempe-gallery.jpg") center / cover no-repeat;
+  content: "";
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.recordMain {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  gap: clamp(2rem, 4vw, 3.5rem);
+}
+
+.recordTopline {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: rgb(243 238 225 / 68%);
+  font-size: 0.64rem;
+}
+
+.recordTopline span:first-child {
+  color: #ffc627;
+}
+
+.degreeBlock {
+  display: grid;
+  max-width: 58rem;
+  gap: 0.65rem;
+}
+
+.degreeBlock p {
+  color: rgb(255 198 39 / 78%);
+  font-size: 0.66rem;
+}
+
+.degreeBlock h3 {
+  color: var(--cream);
+  font-family: var(--font-grotesk), sans-serif;
+  font-size: clamp(1.75rem, 3.4vw, 3.5rem);
+  font-weight: 390;
+  letter-spacing: -0.055em;
+  line-height: 1;
+}
+
+.degreeBlock > span {
+  color: rgb(243 238 225 / 80%);
+  font-size: clamp(1rem, 1.1vw, 1.18rem);
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-block: 1px solid rgb(243 238 225 / 10%);
+}
+
+.metrics div {
+  display: grid;
+  padding: 1.15rem 1.25rem 1.15rem 0;
+  gap: 0.18rem;
+}
+
+.metrics div + div {
+  padding-left: 1.25rem;
+  border-left: 1px solid rgb(243 238 225 / 10%);
+}
+
+.metrics strong {
+  color: var(--cream);
+  font-family: var(--font-grotesk), sans-serif;
+  font-size: clamp(1.5rem, 2.4vw, 2.4rem);
+  font-weight: 470;
+  letter-spacing: -0.05em;
+}
+
+.metrics span {
+  color: rgb(205 210 202 / 72%);
+  font-size: 0.58rem;
+}
+
+.focus {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.focus p {
+  color: rgb(243 238 225 / 68%);
+  font-size: 0.72rem;
+}
+
+.focus ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.focus li {
+  padding: 0.68rem 0.95rem;
+  border: 1px solid rgb(255 198 39 / 18%);
+  border-radius: 999px;
+  color: rgb(243 238 225 / 82%);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.identity {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 100%;
+  padding: clamp(1.25rem, 2.25vw, 1.8rem);
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  background: transparent;
+}
+
+.logoFrame {
+  display: grid;
+  width: min(86%, 18rem);
+  aspect-ratio: 1.22;
+  margin: auto;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 74%);
+  border-radius: 1.25rem;
+  background: #fff;
+  box-shadow: 0 1.25rem 3rem rgb(0 0 0 / 28%);
+  transform: rotate(-1.5deg);
+}
+
+.logoFrame img {
+  width: 100%;
+  height: auto;
+}
+
+.identityFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.45rem;
+  color: rgb(243 238 225 / 72%);
+  font-size: clamp(0.58rem, 0.54rem + 0.06vw, 0.66rem);
+  letter-spacing: 0.09em;
+  white-space: nowrap;
+}
+
+.identityFooter span:first-child {
+  margin-right: auto;
+}
+
+.identityFooter strong {
+  color: #ffc627;
+  white-space: nowrap;
+}
+
+.acpCard {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: min(40rem, 100%);
+  min-height: 10rem;
+  margin: 1.25rem 0 0 auto;
+  grid-template-columns: clamp(7.5rem, 11vw, 10rem) minmax(0, 1fr);
+  overflow: hidden;
+  border: 1px solid rgb(145 105 194 / 24%);
+  border-radius: clamp(1.2rem, 2vw, 1.75rem);
+  background:
+    radial-gradient(circle at 12% 50%, rgb(96 59 141 / 12%), transparent 34%),
+    #0d100e;
+  box-shadow: 0 1.25rem 3rem rgb(0 0 0 / 22%);
+  color: var(--cream);
+}
+
+.acpLogo {
+  display: grid;
+  padding: clamp(1rem, 2vw, 1.35rem);
+  place-items: center;
+  border-right: 1px solid rgb(243 238 225 / 10%);
+  background: #fff;
+}
+
+.acpLogo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.acpContent {
+  display: grid;
+  min-width: 0;
+  padding: clamp(1.2rem, 2.5vw, 1.75rem);
+  align-content: space-between;
+  gap: 1rem;
+}
+
+.acpContent > p {
+  color: rgb(176 143 222 / 72%);
+  font-size: 0.74rem;
+  font-weight: 650;
+}
+
+.acpContent h3 {
+  max-width: 23rem;
+  color: rgb(243 238 225 / 90%);
+  font-family: var(--font-grotesk), sans-serif;
+  font-size: clamp(1.3rem, 2vw, 1.9rem);
+  font-weight: 430;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+}
+
+.acpFooter {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  color: rgb(243 238 225 / 64%);
+  font-size: 0.68rem;
+}
+
+.acpFooter strong {
+  color: rgb(176 143 222 / 68%);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+@media (max-width: 58rem) {
+  .record {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .identity {
+    min-height: 20rem;
+    border-top: 1px solid rgb(243 238 225 / 10%);
+    border-left: 0;
+  }
+
+  .logoFrame {
+    width: 13rem;
+  }
+
+  .acpCard {
+    width: min(36rem, 100%);
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 34rem) {
+  .sectionHeader {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .recordTopline {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .metrics {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .metrics div + div {
+    padding-left: 0;
+    border-top: 1px solid rgb(243 238 225 / 10%);
+    border-left: 0;
+  }
+
+  .acpCard {
+    width: 100%;
+    min-height: 0;
+    margin-top: 0.85rem;
+    grid-template-columns: 6.5rem minmax(0, 1fr);
+  }
+
+  .acpContent {
+    padding: 1.1rem;
+  }
+
+  .acpFooter span {
+    display: none;
+  }
+}
