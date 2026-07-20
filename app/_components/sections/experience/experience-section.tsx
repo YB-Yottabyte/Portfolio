@@ -8,7 +8,7 @@ import {
   HiArrowUpRight,
   HiMapPin,
 } from "react-icons/hi2";
-import { assetPath } from "./asset-path";
+import { assetPath } from "@/app/_lib/asset-path";
 import styles from "./experience-section.module.css";
 
 type Experience = {

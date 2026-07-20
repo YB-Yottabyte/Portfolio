@@ -1,6 +1,6 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
-import { assetPath } from "./asset-path";
+import { assetPath } from "@/app/_lib/asset-path";
 import styles from "./education-section.module.css";
 
 const FOCUS_AREAS = [

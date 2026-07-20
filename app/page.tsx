@@ -1,12 +1,12 @@
-import { ImageRevealHero } from "./image-reveal-hero";
-import { AboutSection } from "./about-section";
-import { EducationSection } from "./education-section";
-import { ExperienceSection } from "./experience-section";
-import { ProjectsSection } from "./projects-section";
-import { SkillsSection } from "./skills-section";
-import { ContactSection } from "./contact-section";
-import Footer from "./footer";
-import { SectionMotion } from "./section-motion";
+import { SectionMotion } from "@/app/_components/effects/section-motion";
+import { ImageRevealHero } from "@/app/_components/hero/image-reveal-hero";
+import Footer from "@/app/_components/layout/footer/footer";
+import { AboutSection } from "@/app/_components/sections/about/about-section";
+import { ContactSection } from "@/app/_components/sections/contact/contact-section";
+import { EducationSection } from "@/app/_components/sections/education/education-section";
+import { ExperienceSection } from "@/app/_components/sections/experience/experience-section";
+import { ProjectsSection } from "@/app/_components/sections/projects/projects-section";
+import { SkillsSection } from "@/app/_components/sections/skills/skills-section";
 
 export default function Home() {
   return (

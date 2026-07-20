@@ -4,7 +4,7 @@ import { useState, type CSSProperties } from "react";
 import Image from "next/image";
 import { HiArrowRight, HiArrowUpRight, HiChevronDown } from "react-icons/hi2";
 import { SiGithub } from "react-icons/si";
-import { assetPath } from "./asset-path";
+import { assetPath } from "@/app/_lib/asset-path";
 import styles from "./projects-section.module.css";
 
 type Category = "Research" | "AI / ML" | "Full Stack" | "Data" | "Systems";
