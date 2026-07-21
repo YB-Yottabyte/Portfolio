@@ -45,7 +45,7 @@ export function EducationSection() {
               <div className={styles.metrics} aria-label="Academic highlights">
                 <div>
                   <strong>4.00</strong>
-                  <span>Honors GPA</span>
+                  <span>GPA</span>
                 </div>
                 <div>
                   <strong>CS</strong>

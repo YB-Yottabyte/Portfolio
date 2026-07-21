@@ -83,10 +83,6 @@ export default function Footer() {
 
         <div className={`${styles.meta} ${styles.reveal}`}>
           <p>© 2026 Sai Rithwik Kukunuri</p>
-          <p>Designed and built with care</p>
-          <p className={styles.status}>
-            <span aria-hidden="true" /> Systems · research · interfaces
-          </p>
         </div>
       </div>
     </footer>

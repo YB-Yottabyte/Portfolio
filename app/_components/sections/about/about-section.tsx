@@ -14,12 +14,10 @@ const PHOTO_FRAME = {
 const INTERESTS = [
   "Software Development",
   "Full-Stack Development",
-  "Software Engineering",
-  "Web Development",
+  "AI/ML Systems",
   "Cloud Engineering",
-  "Data Analytics",
+  "Data Science & Analytics",
   "Data Engineering",
-  "Database Systems",
 ] as const;
 
 export function AboutSection() {
@@ -37,15 +35,13 @@ export function AboutSection() {
         <div className={styles.introduction}>
           <div className={styles.copy}>
             <h2 id="about-title" className={styles.title}>
-              Building where
-              <br />
-              <em>software meets data</em>
+              Who Am <span>I?</span>
             </h2>
 
             <div className={styles.credentials} aria-label="Education summary">
               <span>
                 <strong>4.00</strong>
-                Honors GPA
+                GPA
               </span>
               <span>
                 <strong>CS</strong>
@@ -122,7 +118,7 @@ export function AboutSection() {
         <div className={styles.interests}>
           <div className={styles.interestsHeading}>
             <p>Areas of interest</p>
-            <span>08 focus areas</span>
+            <span>{String(INTERESTS.length).padStart(2, "0")} focus areas</span>
           </div>
 
           <ol>

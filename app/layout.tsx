@@ -18,9 +18,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vision Portfolio | Computer Vision Engineer",
+  title: "Portfolio",
   description:
-    "A portfolio of computer vision, machine learning, and interactive software work.",
+    "A portfolio",
 };
 
 export default function RootLayout({

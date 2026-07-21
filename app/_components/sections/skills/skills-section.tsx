@@ -49,7 +49,7 @@ const SKILL_GROUPS: SkillGroup[] = [
   {
     id: "ai-vision",
     number: "01",
-    label: "Intelligent Systems",
+    label: "AI/ML & Computer Vision",
     description: "Models, perception, segmentation, and intelligent retrieval.",
     accent: "#76c7c0",
     featured: true,
@@ -144,53 +144,56 @@ export function SkillsSection() {
     >
       <div className={styles.inner}>
         <header className={styles.header}>
-          <div>
-            <p className={styles.eyebrow}>Skills · technical map</p>
-            <h2 id="skills-title" className={styles.title}>
-              Skills, <em>connected</em>
-            </h2>
-          </div>
-          <p className={styles.intro}>
-            The tools I use across AI/ML, computer vision, data systems,
-            software engineering, and product development.
-          </p>
+          <h2 id="skills-title">Skills</h2>
+          <p>Technical toolkit</p>
         </header>
 
-        <div className={styles.skillsGrid}>
-          {SKILL_GROUPS.map((group) => (
-            <article
-              key={group.id}
-              className={`${styles.skillCard} ${group.featured ? styles.featuredCard : ""}`}
-              style={{ "--group-accent": group.accent } as CSSProperties}
-            >
-              <div className={styles.cardHeader}>
-                <span>{group.number}</span>
-                <div>
-                  <p>{group.featured ? "Primary focus" : "Skill cluster"}</p>
-                  <h3>{group.label}</h3>
+        <div className={styles.skillsPanel}>
+          <div className={styles.panelLead}>
+            <p>Capabilities · {String(SKILL_GROUPS.length).padStart(2, "0")} disciplines</p>
+            <h3>Tools for building complete software systems.</h3>
+            <span>
+              From responsive interfaces and backend APIs to databases, data
+              workflows, and machine learning applications.
+            </span>
+          </div>
+
+          <div className={styles.skillsGrid}>
+            {SKILL_GROUPS.map((group) => (
+              <article
+                key={group.id}
+                className={`${styles.skillCard} ${group.featured ? styles.featuredCard : ""}`}
+                style={{ "--group-accent": group.accent } as CSSProperties}
+              >
+                <div className={styles.cardHeader}>
+                  <span>{group.number}</span>
+                  <div>
+                    <p>{group.featured ? "Primary focus" : "Skill cluster"}</p>
+                    <h3>{group.label}</h3>
+                  </div>
                 </div>
-              </div>
 
-              <p className={styles.cardDescription}>{group.description}</p>
+                <p className={styles.cardDescription}>{group.description}</p>
 
-              <ul className={styles.skillList}>
-                {group.skills.map((skill) => {
-                  const Icon = skill.icon;
-                  return (
-                    <li key={skill.name}>
-                      <Icon style={{ color: skill.color }} aria-hidden="true" />
-                      <span>{skill.name}</span>
-                    </li>
-                  );
-                })}
-              </ul>
+                <ul className={styles.skillList}>
+                  {group.skills.map((skill) => {
+                    const Icon = skill.icon;
+                    return (
+                      <li key={skill.name}>
+                        <Icon style={{ color: skill.color }} aria-hidden="true" />
+                        <span>{skill.name}</span>
+                      </li>
+                    );
+                  })}
+                </ul>
 
-              <div className={styles.cardFooter}>
-                <span>{String(group.skills.length).padStart(2, "0")} tools</span>
-                <i aria-hidden="true" />
-              </div>
-            </article>
-          ))}
+                <div className={styles.cardFooter}>
+                  <strong>{String(group.skills.length).padStart(2, "0")}</strong>
+                  <span>tools</span>
+                </div>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>
