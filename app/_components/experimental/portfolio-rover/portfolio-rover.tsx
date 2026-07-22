@@ -23,6 +23,8 @@ const EMPTY_CONTROLS: Controls = {
   backward: false,
 };
 
+const SCROLL_TRAVEL_MULTIPLIER = 1.22;
+
 export function PortfolioRover() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const routePathRef = useRef<SVGPathElement>(null);
@@ -53,9 +55,10 @@ export function PortfolioRover() {
       const edgeX = width - carWidth / 2 - (mobile ? 5 : 18);
       const headingIds = [
         "about-title",
+        "education-title",
+        "skills-title",
         "experience-title",
         "projects-title",
-        "skills-title",
         "contact-title",
       ];
 
@@ -116,10 +119,15 @@ export function PortfolioRover() {
           },
         ];
       });
-      const firstY = Math.max(
-        carHeight / 2 + 24,
-        window.innerHeight - carHeight / 2 - 28,
-      );
+      const navbar = document.querySelector<HTMLElement>(".hero__nav");
+      const navbarBounds = navbar?.getBoundingClientRect();
+      const navbarVisible = Boolean(navbarBounds && navbarBounds.width > 0);
+      const firstY = navbarVisible && navbarBounds
+        ? Math.max(carHeight / 2 + 4, navbarBounds.top + navbarBounds.height / 2)
+        : Math.max(carHeight / 2 + 16, 72);
+      const firstX = navbarVisible && navbarBounds
+        ? Math.min(edgeX, navbarBounds.right + carWidth / 2 + 16)
+        : edgeX;
       const lastY = Math.min(
         height - 24,
         headingPoints[headingPoints.length - 1].y + 150,
@@ -191,9 +199,9 @@ export function PortfolioRover() {
       };
 
       const points: Array<{ x: number; y: number }> = [
-        { x: edgeX, y: firstY },
+        { x: firstX, y: firstY },
       ];
-      let previousX = edgeX;
+      let previousX = firstX;
       headingPoints.forEach((headingPoint, index) => {
         const previousHeading = headingPoints[index - 1];
         const nextHeading = headingPoints[index + 1];
@@ -309,10 +317,15 @@ export function PortfolioRover() {
 
     const updateProgress = () => {
       frameId = 0;
-      const scrollable =
-        document.documentElement.scrollHeight - window.innerHeight;
-      const nextProgress =
-        scrollable > 0 ? Math.min(1, Math.max(0, window.scrollY / scrollable)) : 0;
+      const routeDistance = Math.max(1, route.endY - route.startY);
+      const targetY = Math.min(
+        route.endY,
+        route.startY + Math.max(0, window.scrollY) * SCROLL_TRAVEL_MULTIPLIER,
+      );
+      const nextProgress = Math.min(
+        1,
+        Math.max(0, (targetY - route.startY) / routeDistance),
+      );
 
       setProgress(nextProgress);
 
@@ -321,8 +334,6 @@ export function PortfolioRover() {
       if (!routePath || !vehicleStage) return;
 
       const routeLength = routePath.getTotalLength();
-      const targetY =
-        route.startY + (route.endY - route.startY) * nextProgress;
       let lowerLength = 0;
       let upperLength = routeLength;
       for (let index = 0; index < 14; index += 1) {

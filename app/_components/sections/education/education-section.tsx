@@ -34,6 +34,7 @@ export function EducationSection() {
             <div className={styles.recordMain}>
               <div className={styles.recordTopline}>
                 <span>Arizona State University</span>
+                <span>Aug 2024 — Present</span>
               </div>
 
               <div className={styles.degreeBlock}>
@@ -78,7 +79,6 @@ export function EducationSection() {
               </div>
               <div className={styles.identityFooter}>
                 <span>Current academic chapter</span>
-                <strong>ASU</strong>
                 <span>Tempe, AZ</span>
               </div>
             </aside>
@@ -94,7 +94,10 @@ export function EducationSection() {
               />
             </div>
             <div className={styles.acpContent}>
-              <p>Earlier academic chapter</p>
+              <div className={styles.acpTopline}>
+                <p>Earlier academic chapter</p>
+                <span>Oct 2022 — May 2024</span>
+              </div>
               <h3>Arizona College Preparatory Erie Campus</h3>
               <div className={styles.acpFooter}>
                 <span>College preparatory education</span>

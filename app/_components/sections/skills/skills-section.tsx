@@ -39,7 +39,6 @@ type SkillGroup = {
   id: string;
   number: string;
   label: string;
-  description: string;
   accent: string;
   featured?: boolean;
   skills: Skill[];
@@ -50,7 +49,6 @@ const SKILL_GROUPS: SkillGroup[] = [
     id: "ai-vision",
     number: "01",
     label: "AI/ML & Computer Vision",
-    description: "Models, perception, segmentation, and intelligent retrieval.",
     accent: "#76c7c0",
     featured: true,
     skills: [
@@ -67,7 +65,6 @@ const SKILL_GROUPS: SkillGroup[] = [
     id: "languages",
     number: "02",
     label: "Languages",
-    description: "Core languages for systems, data, and application development.",
     accent: "#c3df6e",
     skills: [
       { name: "Python", icon: SiPython, color: "#4b8bbe" },
@@ -82,7 +79,6 @@ const SKILL_GROUPS: SkillGroup[] = [
     id: "backend",
     number: "03",
     label: "Backend & APIs",
-    description: "Services that move models and products into production.",
     accent: "#e6b86a",
     skills: [
       { name: "FastAPI", icon: SiFastapi, color: "#2db7a3" },
@@ -95,7 +91,6 @@ const SKILL_GROUPS: SkillGroup[] = [
     id: "data",
     number: "04",
     label: "Data Systems",
-    description: "Storage and data layers for scalable software workflows.",
     accent: "#8ed6cf",
     skills: [
       { name: "MongoDB", icon: SiMongodb, color: "#47a248" },
@@ -107,7 +102,6 @@ const SKILL_GROUPS: SkillGroup[] = [
     id: "frontend",
     number: "05",
     label: "Frontend & Design",
-    description: "Clear interfaces for complex systems and real users.",
     accent: "#76c7c0",
     skills: [
       { name: "React", icon: SiReact, color: "#61dafb" },
@@ -118,6 +112,11 @@ const SKILL_GROUPS: SkillGroup[] = [
     ],
   },
 ];
+
+const TOTAL_SKILLS = SKILL_GROUPS.reduce(
+  (total, group) => total + group.skills.length,
+  0,
+);
 
 export function SkillsSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -144,18 +143,31 @@ export function SkillsSection() {
     >
       <div className={styles.inner}>
         <header className={styles.header}>
-          <h2 id="skills-title">Skills</h2>
-          <p>Technical toolkit</p>
+          <div className={styles.headingGroup}>
+            <p>Technical toolkit</p>
+            <h2 id="skills-title">Skills</h2>
+          </div>
+          <div className={styles.headerAside}>
+            <p className={styles.headerDescription}>
+              A focused toolkit spanning intelligent systems, software
+              engineering, data platforms, and interface design.
+            </p>
+            <div className={styles.headerStats} aria-label="Skills summary">
+              <span>
+                <strong>{String(SKILL_GROUPS.length).padStart(2, "0")}</strong>
+                disciplines
+              </span>
+              <span>
+                <strong>{String(TOTAL_SKILLS).padStart(2, "0")}</strong>
+                tools
+              </span>
+            </div>
+          </div>
         </header>
 
         <div className={styles.skillsPanel}>
           <div className={styles.panelLead}>
             <p>Capabilities · {String(SKILL_GROUPS.length).padStart(2, "0")} disciplines</p>
-            <h3>Tools for building complete software systems.</h3>
-            <span>
-              From responsive interfaces and backend APIs to databases, data
-              workflows, and machine learning applications.
-            </span>
           </div>
 
           <div className={styles.skillsGrid}>
@@ -172,8 +184,6 @@ export function SkillsSection() {
                     <h3>{group.label}</h3>
                   </div>
                 </div>
-
-                <p className={styles.cardDescription}>{group.description}</p>
 
                 <ul className={styles.skillList}>
                   {group.skills.map((skill) => {

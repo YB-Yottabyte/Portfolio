@@ -27,7 +27,7 @@
   width: 100%;
   height: 100%;
   overflow: visible;
-  filter: drop-shadow(0 0 0.4rem rgb(195 223 110 / 14%));
+  filter: drop-shadow(0 0 0.35rem rgb(243 238 225 / 8%));
 }
 
 .pathBase,
@@ -39,13 +39,13 @@
 }
 
 .pathBase {
-  stroke: rgb(243 238 225 / 12%);
+  stroke: rgb(243 238 225 / 8%);
   stroke-dasharray: 0.008 0.018;
   stroke-width: 1.5;
 }
 
 .pathProgress {
-  stroke: #c3df6e;
+  stroke: rgb(243 238 225 / 34%);
   stroke-dasharray: 1;
   stroke-dashoffset: var(--path-offset);
   stroke-width: 2;
@@ -60,7 +60,6 @@
   height: clamp(5.2rem, 6.4vw, 6.4rem);
   filter: drop-shadow(0 0.7rem 0.8rem rgb(0 0 0 / 28%));
   transform: translate(-50%, -50%) rotate(var(--car-turn));
-  transition: top 120ms linear, left 120ms linear, transform 120ms linear;
 }
 
 .vehicleStage canvas {

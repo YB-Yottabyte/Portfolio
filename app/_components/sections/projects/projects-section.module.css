@@ -4,22 +4,8 @@
   padding: clamp(5rem, 9vw, 8rem) var(--page-gutter);
   overflow: clip;
   border-bottom: 1px solid rgb(243 238 225 / 7%);
-  background:
-    radial-gradient(circle at 12% 18%, rgb(118 199 192 / 8%), transparent 22%),
-    linear-gradient(180deg, #080b09 0%, #0b100d 100%);
+  background: linear-gradient(180deg, #080808 0%, #0b0b0b 100%);
   color: var(--cream);
-}
-
-.section::before {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, rgb(243 238 225 / 2.5%) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(243 238 225 / 2.5%) 1px, transparent 1px);
-  background-size: 4rem 4rem;
-  mask-image: linear-gradient(90deg, transparent 8%, #000 48%, transparent 94%);
-  pointer-events: none;
-  content: "";
 }
 
 .inner {
@@ -59,7 +45,7 @@
 }
 
 .eyebrow {
-  color: #76c7c0;
+  color: var(--accent);
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.15em;
@@ -144,7 +130,7 @@
       color-mix(in srgb, var(--project-color) 8%, transparent),
       transparent 50%
     ),
-    rgb(13 19 15 / 90%);
+    rgb(14 14 14 / 92%);
   box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 22%);
   isolation: isolate;
   perspective: 1200px;
@@ -187,7 +173,7 @@
       color-mix(in srgb, var(--project-color) 13%, transparent),
       transparent 55%
     ),
-    rgb(11 17 13 / 98%);
+    rgb(12 12 12 / 98%);
   opacity: 0;
   pointer-events: none;
   transform: rotateY(-180deg) scale(0.98);
@@ -234,8 +220,8 @@
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgb(13 19 15 / 95%) 0%, rgb(13 19 15 / 70%) 52%, rgb(13 19 15 / 30%) 100%),
-    linear-gradient(180deg, rgb(13 19 15 / 8%), rgb(13 19 15 / 76%));
+    linear-gradient(90deg, rgb(13 13 13 / 95%) 0%, rgb(13 13 13 / 70%) 52%, rgb(13 13 13 / 30%) 100%),
+    linear-gradient(180deg, rgb(13 13 13 / 8%), rgb(13 13 13 / 76%));
   content: "";
 }
 

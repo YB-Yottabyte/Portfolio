@@ -4,22 +4,8 @@
   padding: clamp(5rem, 9vw, 8rem) var(--page-gutter);
   overflow: clip;
   border-bottom: 1px solid rgb(243 238 225 / 7%);
-  background:
-    radial-gradient(circle at 88% 18%, rgb(230 184 106 / 7%), transparent 24%),
-    linear-gradient(180deg, #0b0f0c 0%, #080b09 100%);
+  background: linear-gradient(180deg, #0b0b0b 0%, #080808 100%);
   color: var(--cream);
-}
-
-.section::before {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(to right, rgb(243 238 225 / 2.6%) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(243 238 225 / 2.6%) 1px, transparent 1px);
-  background-size: 4rem 4rem;
-  mask-image: linear-gradient(90deg, transparent 8%, #000 50%, transparent 94%);
-  pointer-events: none;
-  content: "";
 }
 
 .inner {
@@ -92,9 +78,9 @@
   color: var(--cream);
   font-family: var(--font-grotesk), sans-serif;
   font-size: clamp(3rem, 5vw, 5.25rem);
-  font-weight: 400;
-  letter-spacing: -0.055em;
-  line-height: 1;
+  font-weight: 350;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
   white-space: nowrap;
 }
 
@@ -204,7 +190,7 @@
   height: 2.15rem;
   place-items: center;
   border-radius: 50%;
-  background: rgb(8 12 9 / 76%);
+  background: rgb(8 8 8 / 78%);
   color: var(--accent);
   font-family: var(--font-geist-mono), monospace;
   font-size: 0.56rem;
@@ -301,7 +287,7 @@
 }
 
 .interests li:hover {
-  background: rgb(195 223 110 / 5%);
+  background: rgb(243 238 225 / 3%);
 }
 
 .interests li > span {

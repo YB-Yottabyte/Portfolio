@@ -7,35 +7,100 @@
   padding: clamp(5rem, 8vw, 7.5rem) var(--page-gutter)
     clamp(1.75rem, 3vw, 2.5rem);
   border-top: 1px solid rgb(243 238 225 / 8%);
-  background:
-    radial-gradient(circle at 78% 12%, rgb(195 223 110 / 8%), transparent 25%),
-    linear-gradient(180deg, #0d120f 0%, #070908 100%);
+  background: linear-gradient(180deg, #0d0d0d 0%, #070707 100%);
   color: var(--cream);
 }
 
-.dither {
+.flight {
   position: absolute;
-  inset: 0 0 auto;
-  height: clamp(3rem, 7vw, 5rem);
-  background-image:
-    linear-gradient(to right, rgb(195 223 110 / 40%) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(195 223 110 / 40%) 1px, transparent 1px);
-  background-size: 0.65rem 0.65rem;
-  opacity: 0.42;
-  mask-image: linear-gradient(
-    90deg,
-    transparent 1%,
-    #000 8%,
-    transparent 24%,
-    transparent 74%,
-    #000 92%,
-    transparent 99%
-  );
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
   pointer-events: none;
+}
+
+.flight span {
+  position: absolute;
+  left: -4rem;
+  width: 0.28rem;
+  height: 0.28rem;
+  border-radius: 50%;
+  background: rgb(243 238 225 / 72%);
+  box-shadow:
+    0 0 0.65rem rgb(243 238 225 / 34%),
+    0 0 1.4rem rgb(243 238 225 / 12%);
+  opacity: 0;
+  animation: footer-flight 14s linear infinite;
+  animation-play-state: paused;
+}
+
+.flight span::after {
+  position: absolute;
+  top: 50%;
+  right: 0.15rem;
+  width: clamp(1.5rem, 4vw, 3.75rem);
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgb(243 238 225 / 24%));
+  content: "";
+  transform: translateY(-50%);
+  transform-origin: right center;
+}
+
+.flight span:nth-child(1) {
+  top: 12%;
+  animation-delay: -2s;
+  animation-duration: 15s;
+}
+
+.flight span:nth-child(2) {
+  top: 28%;
+  animation-delay: -9s;
+  animation-duration: 19s;
+  scale: 0.7;
+}
+
+.flight span:nth-child(3) {
+  top: 46%;
+  animation-delay: -5s;
+  animation-duration: 17s;
+  scale: 1.15;
+}
+
+.flight span:nth-child(4) {
+  top: 68%;
+  animation-delay: -13s;
+  animation-duration: 22s;
+  scale: 0.6;
+}
+
+.flight span:nth-child(5) {
+  top: 82%;
+  animation-delay: -7s;
+  animation-duration: 18s;
+  scale: 0.85;
+}
+
+.flight span:nth-child(6) {
+  top: 38%;
+  animation-delay: -16s;
+  animation-duration: 25s;
+  scale: 0.55;
+}
+
+.flight span:nth-child(7) {
+  top: 58%;
+  animation-delay: -1s;
+  animation-duration: 20s;
+  scale: 0.75;
+}
+
+.footer[data-visible="true"] .flight span {
+  animation-play-state: running;
 }
 
 .inner {
   position: relative;
+  z-index: 1;
   width: 100%;
   max-width: var(--content-width);
   min-width: 0;
@@ -147,8 +212,7 @@
   text-align: left;
 }
 
-.reveal,
-.dither {
+.reveal {
   transition:
     opacity 0.75s ease,
     transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
@@ -157,11 +221,6 @@
 .footer[data-visible="false"] .reveal {
   opacity: 0;
   transform: translateY(1.25rem);
-}
-
-.footer[data-visible="false"] .dither {
-  opacity: 0;
-  transform: translateY(-0.75rem);
 }
 
 .footer[data-visible="true"] .primary .reveal:nth-child(2) {
@@ -174,6 +233,31 @@
 
 .footer[data-visible="true"] .meta {
   transition-delay: 0.26s;
+}
+
+@keyframes footer-flight {
+  0% {
+    opacity: 0;
+    transform: translate3d(-4rem, 1rem, 0);
+  }
+
+  8% {
+    opacity: 0.7;
+  }
+
+  48% {
+    opacity: 0.42;
+    transform: translate3d(52vw, -1.4rem, 0);
+  }
+
+  92% {
+    opacity: 0.68;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(calc(100vw + 8rem), 1.25rem, 0);
+  }
 }
 
 @media (max-width: 48rem) {
@@ -207,19 +291,24 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal,
-  .dither {
+  .reveal {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
   }
 
+  .flight {
+    display: none;
+  }
 }
 
 @media (scripting: none) {
-  .reveal,
-  .dither {
+  .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .flight {
+    display: none;
   }
 }

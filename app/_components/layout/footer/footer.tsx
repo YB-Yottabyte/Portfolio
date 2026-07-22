@@ -32,7 +32,11 @@ export default function Footer() {
       className={styles.footer}
       data-visible={isVisible ? "true" : "false"}
     >
-      <div className={styles.dither} aria-hidden="true" />
+      <div className={styles.flight} aria-hidden="true">
+        {Array.from({ length: 7 }, (_, index) => (
+          <span key={index} />
+        ))}
+      </div>
 
       <div className={styles.inner}>
         <div className={styles.primary}>

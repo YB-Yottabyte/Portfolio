@@ -3,8 +3,6 @@
 import { useRef, useState, type KeyboardEvent } from "react";
 import Image from "next/image";
 import {
-  HiArrowLeft,
-  HiArrowRight,
   HiArrowUpRight,
   HiMapPin,
 } from "react-icons/hi2";
@@ -179,7 +177,6 @@ export function ExperienceSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const activeExperience = EXPERIENCES[activeIndex];
-  const progress = (activeIndex / (EXPERIENCES.length - 1)) * 100;
 
   const selectExperience = (index: number, focus = false) => {
     const nextIndex = (index + EXPERIENCES.length) % EXPERIENCES.length;
@@ -268,10 +265,6 @@ export function ExperienceSection() {
               role="tablist"
               aria-label="Work experience chapters"
             >
-              <div className={styles.railLine} aria-hidden="true">
-                <span style={{ width: `${progress}%` }} />
-              </div>
-
               {EXPERIENCES.map((experience, index) => {
                 const active = index === activeIndex;
 
@@ -413,25 +406,6 @@ export function ExperienceSection() {
             </div>
           </article>
 
-          <div className={styles.archiveControls}>
-            <p>Use arrow keys or controls to explore the archive.</p>
-            <div>
-              <button
-                type="button"
-                aria-label="Previous experience"
-                onClick={() => selectExperience(activeIndex - 1)}
-              >
-                <HiArrowLeft aria-hidden="true" />
-              </button>
-              <button
-                type="button"
-                aria-label="Next experience"
-                onClick={() => selectExperience(activeIndex + 1)}
-              >
-                <HiArrowRight aria-hidden="true" />
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </section>

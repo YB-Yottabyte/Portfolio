@@ -4,9 +4,7 @@
   padding: clamp(5rem, 9vw, 8rem) var(--page-gutter);
   overflow: clip;
   border-bottom: 1px solid rgb(243 238 225 / 7%);
-  background:
-    radial-gradient(circle at 14% 22%, rgb(118 199 192 / 6%), transparent 25%),
-    linear-gradient(180deg, #070908, #0a0e0b);
+  background: linear-gradient(180deg, #070707, #0a0a0a);
   color: var(--cream);
 }
 
@@ -19,23 +17,33 @@
 }
 
 .header {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.42fr);
   margin-bottom: clamp(2rem, 4vw, 3.25rem);
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 2rem;
+  align-items: start;
+  gap: clamp(2rem, 7vw, 7rem);
+}
+
+.headingGroup {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.headerAside {
+  display: grid;
+  gap: 1.35rem;
 }
 
 .header h2 {
   color: var(--cream);
   font-family: var(--font-grotesk), sans-serif;
-  font-size: clamp(2.25rem, 4.2vw, 4.25rem);
-  font-weight: 380;
+  font-size: clamp(2.75rem, 5.2vw, 5.25rem);
+  font-weight: 350;
   letter-spacing: -0.06em;
   line-height: 0.9;
 }
 
-.header p,
+.headingGroup p,
 .panelLead > p,
 .cardHeader p,
 .cardHeader > span,
@@ -45,11 +53,45 @@
   text-transform: uppercase;
 }
 
-.header p {
+.headingGroup p {
   color: var(--accent);
   font-size: 0.68rem;
   font-weight: 600;
   letter-spacing: 0.14em;
+}
+
+.headerDescription {
+  max-width: 36rem;
+  color: rgb(243 238 225 / 72%);
+  font-size: clamp(0.95rem, 0.9rem + 0.2vw, 1.08rem);
+  line-height: 1.7;
+  text-wrap: pretty;
+}
+
+.headerStats {
+  display: flex;
+  gap: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgb(243 238 225 / 11%);
+}
+
+.headerStats span {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  color: rgb(243 238 225 / 60%);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.headerStats strong {
+  color: var(--cream);
+  font-family: var(--font-grotesk), sans-serif;
+  font-size: 1.35rem;
+  font-weight: 450;
+  letter-spacing: -0.04em;
 }
 
 .skillsPanel {
@@ -69,23 +111,6 @@
   font-weight: 650;
 }
 
-.panelLead h3 {
-  max-width: 20ch;
-  color: var(--cream);
-  font-family: var(--font-grotesk), sans-serif;
-  font-size: clamp(2rem, 4vw, 4rem);
-  font-weight: 390;
-  letter-spacing: -0.055em;
-  line-height: 1;
-}
-
-.panelLead > span {
-  max-width: 42rem;
-  color: rgb(243 238 225 / 68%);
-  font-size: clamp(0.9rem, 0.86rem + 0.16vw, 1rem);
-  line-height: 1.65;
-}
-
 .skillsGrid {
   display: grid;
   border-top: 1px solid rgb(243 238 225 / 12%);
@@ -98,9 +123,9 @@
   display: grid;
   min-width: 0;
   padding: var(--row-padding) 0;
-  grid-template-columns: minmax(14rem, 0.7fr) minmax(13rem, 0.55fr) minmax(20rem, 1.4fr) 3rem;
+  grid-template-columns: minmax(14rem, 0.7fr) minmax(20rem, 2.3fr) 3rem;
   align-items: center;
-  gap: clamp(1.25rem, 3vw, 3rem);
+  gap: clamp(1rem, 2vw, 2rem);
   border-bottom: 1px solid rgb(243 238 225 / 9%);
   transition: background-color 0.25s ease;
 }
@@ -147,12 +172,6 @@
   line-height: 1.05;
 }
 
-.cardDescription {
-  color: rgb(243 238 225 / 62%);
-  font-size: 0.78rem;
-  line-height: 1.55;
-}
-
 .skillList {
   display: flex;
   min-width: 0;
@@ -165,12 +184,12 @@
 
 .skillList li {
   display: flex;
-  min-height: 2rem;
+  min-height: 2.25rem;
   padding: 0.35rem 0.5rem 0.35rem 0;
   align-items: center;
   gap: 0.55rem;
   color: rgb(243 238 225 / 84%);
-  font-size: 0.72rem;
+  font-size: clamp(0.78rem, 0.74rem + 0.16vw, 0.88rem);
   white-space: nowrap;
   transition: color 0.2s ease;
 }
@@ -180,8 +199,8 @@
 }
 
 .skillList svg {
-  width: 1.05rem;
-  height: 1.05rem;
+  width: 1.2rem;
+  height: 1.2rem;
   flex: 0 0 auto;
 }
 
@@ -223,15 +242,16 @@
 
 @media (max-width: 76rem) {
   .skillCard {
-    grid-template-columns: minmax(14rem, 0.8fr) minmax(0, 1.4fr) 3rem;
-  }
-
-  .cardDescription {
-    display: none;
+    grid-template-columns: minmax(14rem, 0.7fr) minmax(0, 2.3fr) 3rem;
   }
 }
 
 @media (max-width: 52rem) {
+  .header {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
   .skillCard {
     grid-template-columns: minmax(0, 1fr) auto;
   }
@@ -244,12 +264,6 @@
 @media (max-width: 34rem) {
   .section {
     padding-block: 4rem;
-  }
-
-  .header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.75rem;
   }
 
   .skillCard {
