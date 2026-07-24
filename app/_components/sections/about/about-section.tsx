@@ -13,12 +13,12 @@ const PHOTO_FRAME = {
 } as const;
 
 const INTERESTS = [
-  "Software Development",
+  "Machine Learning",
+  "Computer Vision",
+  "Scientific Computing",
   "Full-Stack Development",
-  "AI/ML Systems",
-  "Cloud Engineering",
-  "Data Science & Analytics",
-  "Data Engineering",
+  "Software Engineering",
+  "Research",
 ] as const;
 
 export function AboutSection() {
@@ -60,8 +60,8 @@ export function AboutSection() {
                 at Arizona State University, majoring in{" "}
                 <strong>Computer Science</strong> with a minor in{" "}
                 <strong>Data Science</strong>, Honors (4.00 GPA). My background
-                spans software engineering, ML systems, full-stack development,
-                and data engineering.
+                spans machine learning, computer vision, scientific computing,
+                and full-stack development.
               </p>
 
               <p>
@@ -76,11 +76,12 @@ export function AboutSection() {
 
               <p>
                 I&apos;m interested in <strong>Software Development</strong>,{" "}
-                <strong>AI/ML Systems</strong>, <strong>Data Science</strong>,{" "}
-                <strong>Cloud Engineering</strong>, <strong>Research</strong>,
-                and <strong>Data Engineering</strong>. I focus on building
-                scalable, practical tools that connect software, data, and
-                real-world problem solving.
+                <strong>AI/ML Systems</strong>, <strong>Computer Vision</strong>,{" "}
+                <strong>Scientific Computing</strong>,{" "}
+                <strong>Data Science</strong>, <strong>Cloud Engineering</strong>,
+                and <strong>Research</strong>. I focus on building scalable,
+                practical tools that connect software, data, and real-world
+                problem solving.
               </p>
             </div>
           </div>

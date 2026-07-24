@@ -464,14 +464,16 @@ export function ImageRevealHero() {
 
       <div className="site-container hero__content">
         <div className="hero__main-copy">
-          <p className="eyebrow">Product-minded engineer · AI · Full stack</p>
+          <p className="eyebrow">
+            Machine Learning · Computer Vision · Full Stack
+          </p>
           <h1 id="intro-title" className="hero__title">
             Sai Rithwik
             <span>Kukunuri</span>
           </h1>
           <p className="hero__meta">
-            Designing and building intelligent digital products from first
-            interaction to final implementation.
+            Building intelligent systems across computer vision, scientific
+            computing, and full-stack development.
           </p>
         </div>
       </div>

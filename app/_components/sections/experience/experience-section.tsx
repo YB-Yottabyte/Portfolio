@@ -1,6 +1,11 @@
 "use client";
 
-import { useRef, useState, type KeyboardEvent } from "react";
+import {
+  useRef,
+  useState,
+  type KeyboardEvent,
+  type ReactNode,
+} from "react";
 import Image from "next/image";
 import { InterfaceGrid } from "@/app/_components/effects/interface-grid";
 import {
@@ -19,7 +24,7 @@ type Experience = {
   endDate: string | null;
   duration: string | null;
   location: string;
-  summary: string;
+  summary: ReactNode;
   impact: string[];
   technologies: string[];
   visual: "teaching" | "research" | "community" | "design";
@@ -60,8 +65,14 @@ export const EXPERIENCES: Experience[] = [
     endDate: "Present",
     duration: "7 mos",
     location: "Tempe, Arizona · Hybrid",
-    summary:
-      "Researches IPv4 IPID behavior under bursty network traffic, focusing on security, predictability, and traffic modeling.",
+    summary: (
+      <>
+        Conducts research under Prof. Joshua Daymude through the{" "}
+        <strong>Biocomputing Scholars Program at ASU</strong>, investigating
+        IPv4 IPID behavior under bursty network traffic to better understand
+        its security, predictability, and traffic-modeling implications.
+      </>
+    ),
     impact: [
       "Modeled IPID behavior under bursty network traffic using MMPP, improving on traditional Poisson assumptions.",
       "Identified weaknesses in IPID selection methods affecting security and predictability.",
@@ -159,7 +170,7 @@ export const EXPERIENCES: Experience[] = [
     visual: "research",
     logo: assetPath("images/excelerate.png"),
     logoCode: "EXC",
-    link: "https://www.linkedin.com/company/82636387/",
+    link: null,
   },
 ];
 

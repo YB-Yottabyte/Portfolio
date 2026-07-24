@@ -342,6 +342,11 @@
   line-height: 1.7;
 }
 
+.summary strong {
+  color: var(--cream);
+  font-weight: 650;
+}
+
 .contributionBlock {
   display: grid;
   gap: 0.75rem;
