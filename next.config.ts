@@ -4,6 +4,7 @@ const isProduction = process.env.NODE_ENV === "production";
 const basePath = isProduction ? "/portfolio" : "";
 
 const nextConfig: NextConfig = {
+  devIndicators: false,
   // Produces a static `out` directory for GitHub Pages.
   output: "export",
   trailingSlash: true,

@@ -33,7 +33,6 @@
 .featuredHeading,
 .featuredTopline,
 .featuredBody p,
-.projectCount,
 .archiveHeader,
 .archiveNumber,
 .archiveTitle small,
@@ -77,22 +76,6 @@
   color: rgb(243 238 225 / 62%);
   font-size: clamp(0.94rem, 0.9rem + 0.2vw, 1.06rem);
   line-height: 1.7;
-}
-
-.projectCount {
-  display: flex;
-  padding-top: 1rem;
-  align-items: center;
-  gap: 0.8rem;
-  border-top: 1px solid rgb(243 238 225 / 11%);
-  color: rgb(243 238 225 / 44%);
-  font-size: 0.6rem;
-}
-
-.projectCount i {
-  width: 2rem;
-  height: 1px;
-  background: rgb(118 199 192 / 36%);
 }
 
 .featuredHeading {
@@ -895,15 +878,6 @@
 }
 
 @media (max-width: 30rem) {
-  .projectCount {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .projectCount i {
-    display: none;
-  }
-
   .featuredBody {
     min-height: 8rem;
   }

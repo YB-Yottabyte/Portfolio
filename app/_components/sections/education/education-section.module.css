@@ -34,11 +34,12 @@
 
 .sectionHeader h2 {
   grid-row: 2;
-  color: var(--cream);
-  font-family: var(--font-grotesk), sans-serif;
+  color: #ffc627;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: clamp(2.75rem, 5.2vw, 5.25rem);
-  font-weight: 350;
-  letter-spacing: -0.06em;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.04em;
   line-height: 0.9;
 }
 
@@ -221,7 +222,7 @@
   border-radius: 1.25rem;
   background: #fff;
   box-shadow: 0 1.25rem 3rem rgb(0 0 0 / 28%);
-  transform: rotate(-1.5deg);
+  transform: none;
 }
 
 .logoFrame img {

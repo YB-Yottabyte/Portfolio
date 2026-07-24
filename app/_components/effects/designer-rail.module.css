@@ -1,0 +1,131 @@
+.rail {
+  position: fixed;
+  z-index: 40;
+  top: 50%;
+  right: 0.85rem;
+  width: 3rem;
+  padding: 0.45rem;
+  overflow: hidden;
+  border: 1px solid rgb(243 238 225 / 12%);
+  border-radius: 0.85rem;
+  background: rgb(14 16 14 / 78%);
+  box-shadow: 0 1rem 3rem rgb(0 0 0 / 24%);
+  color: var(--cream);
+  backdrop-filter: blur(16px);
+  transform: translateY(-50%);
+  transition: width 0.42s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rail:hover,
+.rail:focus-within {
+  width: 9.75rem;
+}
+
+.header {
+  display: flex;
+  height: 1.7rem;
+  padding-inline: 0.35rem;
+  align-items: center;
+  gap: 0.55rem;
+  color: rgb(243 238 225 / 48%);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.header span {
+  width: 0.38rem;
+  height: 0.38rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0.65rem rgb(195 223 110 / 40%);
+}
+
+.header p {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+
+.rail:hover .header p,
+.rail:focus-within .header p {
+  opacity: 1;
+}
+
+.rail ol {
+  display: grid;
+  padding: 0;
+  margin: 0.25rem 0 0;
+  gap: 0.15rem;
+  list-style: none;
+}
+
+.rail a {
+  display: flex;
+  height: 2rem;
+  padding: 0.25rem 0.35rem;
+  align-items: center;
+  gap: 0.65rem;
+  border-radius: 0.48rem;
+  color: rgb(243 238 225 / 54%);
+  font-size: 0.7rem;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.rail a:hover {
+  background: rgb(243 238 225 / 6%);
+  color: var(--cream);
+}
+
+.rail a[aria-current="location"] {
+  background: rgb(195 223 110 / 11%);
+  color: var(--cream);
+}
+
+.rail i {
+  display: grid;
+  width: 1.8rem;
+  height: 1.45rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid rgb(243 238 225 / 10%);
+  border-radius: 0.35rem;
+  color: rgb(243 238 225 / 48%);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.48rem;
+  font-style: normal;
+  letter-spacing: 0.08em;
+}
+
+.rail a[aria-current="location"] i {
+  border-color: rgb(195 223 110 / 32%);
+  color: var(--accent);
+}
+
+.rail a span {
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.2s ease 0.04s;
+}
+
+.rail:hover a span,
+.rail:focus-within a span {
+  opacity: 1;
+}
+
+@media (max-width: 78rem) {
+  .rail {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rail {
+    transition: none;
+  }
+}

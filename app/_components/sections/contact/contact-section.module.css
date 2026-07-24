@@ -53,6 +53,13 @@
   text-wrap: balance;
 }
 
+.title em {
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.04em;
+}
+
 .description {
   max-width: 60ch;
   margin: 0 0 0.35rem;
@@ -85,14 +92,14 @@
 
 .socialLinks {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-block: 1px solid rgb(243 238 225 / 10%);
 }
 
 .socialLink {
   display: grid;
   grid-template-columns: 2.65rem minmax(0, 1fr) 1.2rem;
-  min-height: 6rem;
+  min-height: 5.25rem;
   padding: 1.15rem 1.25rem;
   align-items: center;
   gap: 0.85rem;
@@ -129,20 +136,12 @@
 .socialCopy {
   display: grid;
   min-width: 0;
-  gap: 0.18rem;
 }
 
 .socialCopy strong {
   font-family: var(--font-grotesk), sans-serif;
   font-size: 1rem;
   font-weight: 550;
-}
-
-.socialCopy small {
-  color: rgb(169 176 168 / 68%);
-  font-family: var(--font-public), Arial, Helvetica, sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.45;
 }
 
 .linkArrow {
@@ -165,6 +164,19 @@
 
   .title {
     font-size: clamp(2.35rem, 5vw, 3.75rem);
+  }
+
+  .socialLinks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .socialLink:nth-child(3) {
+    border-top: 1px solid rgb(243 238 225 / 10%);
+    border-left: 0;
+  }
+
+  .socialLink:nth-child(4) {
+    border-top: 1px solid rgb(243 238 225 / 10%);
   }
 }
 

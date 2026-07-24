@@ -14,6 +14,10 @@ const NAV_LINKS = [
   { label: "Contact", href: "#contact" },
 ];
 
+const RESUME_PATH = assetPath(
+  "Sai%20Rithwik%20Kukunuri%20Resume.pdf",
+);
+
 export function ImageRevealHero() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [navDocked, setNavDocked] = useState(false);
@@ -94,7 +98,11 @@ export function ImageRevealHero() {
 
       const isInteractiveTarget = (targetElement: EventTarget | null) =>
         targetElement instanceof Element &&
-        Boolean(targetElement.closest("a, button, [role='button']"));
+        Boolean(
+          targetElement.closest(
+            ".hero__topbar, .hero__menu, a, button, [role='button']",
+          ),
+        );
 
       const getPosition = (clientX: number, clientY: number) => {
         const heroRect = hero.getBoundingClientRect();
@@ -392,7 +400,12 @@ export function ImageRevealHero() {
           ))}
         </nav>
 
-        <a className="hero__cta" href="#main-content">
+        <a
+          className="hero__cta"
+          href={RESUME_PATH}
+          target="_blank"
+          rel="noreferrer noopener"
+        >
           Résumé
         </a>
 
@@ -416,7 +429,12 @@ export function ImageRevealHero() {
             {link.label}
           </a>
         ))}
-        <a href="#main-content" onClick={() => setMenuOpen(false)}>
+        <a
+          href={RESUME_PATH}
+          target="_blank"
+          rel="noreferrer noopener"
+          onClick={() => setMenuOpen(false)}
+        >
           Résumé
         </a>
       </div>
@@ -445,14 +463,17 @@ export function ImageRevealHero() {
       <span ref={crosshairRef} className="hero__crosshair" aria-hidden="true" />
 
       <div className="site-container hero__content">
-        <p className="eyebrow">Computer Vision · AI · Full Stack</p>
-        <h1 id="intro-title" className="hero__title">
-          Sai Rithwik
-          <span>Kukunuri</span>
-        </h1>
-        <p className="hero__meta">
-          Building systems that understand the visual world
-        </p>
+        <div className="hero__main-copy">
+          <p className="eyebrow">Product-minded engineer · AI · Full stack</p>
+          <h1 id="intro-title" className="hero__title">
+            Sai Rithwik
+            <span>Kukunuri</span>
+          </h1>
+          <p className="hero__meta">
+            Designing and building intelligent digital products from first
+            interaction to final implementation.
+          </p>
+        </div>
       </div>
 
       <a className="hero__scroll-cue" href="#about">

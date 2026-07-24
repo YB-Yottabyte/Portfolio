@@ -1,4 +1,5 @@
 import { SectionMotion } from "@/app/_components/effects/section-motion";
+import { DesignerRail } from "@/app/_components/effects/designer-rail";
 import { ImageRevealHero } from "@/app/_components/hero/image-reveal-hero";
 import Footer from "@/app/_components/layout/footer/footer";
 import { AboutSection } from "@/app/_components/sections/about/about-section";
@@ -21,6 +22,7 @@ export default function Home() {
         <ContactSection />
       </main>
       <Footer />
+      <DesignerRail />
       <SectionMotion />
     </>
   );

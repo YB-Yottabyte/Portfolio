@@ -1,7 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { assetPath } from "@/app/_lib/asset-path";
 import styles from "./footer.module.css";
+
+const RESUME_PATH = assetPath(
+  "Sai%20Rithwik%20Kukunuri%20Resume.pdf",
+);
 
 export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
@@ -43,7 +48,7 @@ export default function Footer() {
           <div className={`${styles.brand} ${styles.reveal}`}>
             <a className={styles.wordmark} href="#main-content">
               <span className={styles.monogram}>SR</span>
-              <span>Sai Rithwik</span>
+              <span>Sai Rithwik Kukunuri</span>
             </a>
             <p className={styles.tagline}>
               Building systems that understand the visual world
@@ -57,6 +62,14 @@ export default function Footer() {
             <p className={styles.heading}>Navigate</p>
             <a className={styles.link} href="#main-content">
               Back to top
+            </a>
+            <a
+              className={styles.link}
+              href={RESUME_PATH}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              Résumé
             </a>
           </div>
 

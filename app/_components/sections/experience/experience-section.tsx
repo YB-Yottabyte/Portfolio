@@ -2,6 +2,7 @@
 
 import { useRef, useState, type KeyboardEvent } from "react";
 import Image from "next/image";
+import { InterfaceGrid } from "@/app/_components/effects/interface-grid";
 import {
   HiArrowUpRight,
   HiMapPin,
@@ -218,6 +219,7 @@ export function ExperienceSection() {
       className={styles.section}
       aria-labelledby="experience-title"
     >
+      <InterfaceGrid variant="experience" />
       <div className={styles.glow} aria-hidden="true" />
 
       <div className={styles.inner}>

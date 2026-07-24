@@ -273,7 +273,7 @@ button {
   place-items: center;
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: 50%;
+  border-radius: 0.72rem;
   border: 1px solid var(--panel-border);
   background: var(--panel-bg);
   color: var(--cream);
@@ -294,7 +294,7 @@ button {
   padding: 0.65rem 1.45rem;
   overflow: hidden;
   align-items: center;
-  border-radius: 999px;
+  border-radius: 0.9rem;
   border: 1px solid var(--panel-border);
   background: var(--panel-bg);
   backdrop-filter: blur(12px);
@@ -381,7 +381,7 @@ button {
 
 .hero__cta {
   padding: 0.5rem 1.05rem;
-  border-radius: 999px;
+  border-radius: 0.72rem;
   border: 1px solid var(--panel-border);
   background: var(--panel-bg);
   color: var(--cream);
@@ -438,7 +438,7 @@ button {
   height: 2.5rem;
   padding: 0;
   border: 1px solid var(--panel-border);
-  border-radius: 50%;
+  border-radius: 0.72rem;
   background: var(--panel-bg);
   color: var(--cream);
   backdrop-filter: blur(12px);
@@ -653,9 +653,15 @@ button {
   margin-right: 0;
   margin-left: clamp(1rem, 3vw, 3.5rem);
   padding-top: 0;
+  grid-template-columns: minmax(0, 1fr);
   align-self: center;
-  gap: clamp(0.75rem, 1.4vw, 1.15rem);
   pointer-events: auto;
+}
+
+.hero__main-copy {
+  display: grid;
+  min-width: 0;
+  gap: clamp(0.75rem, 1.4vw, 1.15rem);
 }
 
 .eyebrow {
@@ -666,7 +672,7 @@ button {
   letter-spacing: 0.16em;
   line-height: 1.5;
   text-transform: uppercase;
-  animation: hero-rise 0.7s ease 0.45s both;
+  animation: hero-rise 0.62s ease 0.12s both;
 }
 
 .hero__title {
@@ -679,7 +685,7 @@ button {
   line-height: 0.92;
   text-transform: uppercase;
   text-wrap: balance;
-  animation: hero-rise 0.85s ease 0.55s both;
+  animation: hero-rise 0.72s ease 0.2s both;
 }
 
 .hero__title span {
@@ -694,7 +700,7 @@ button {
   font-weight: 400;
   line-height: 1.55;
   text-wrap: pretty;
-  animation: hero-rise 0.75s ease 0.72s both;
+  animation: hero-rise 0.66s ease 0.32s both;
 }
 
 .hero__scroll-cue {
@@ -718,7 +724,7 @@ button {
   text-transform: uppercase;
   backdrop-filter: blur(12px);
   box-shadow: 0 0.8rem 2rem rgb(0 0 0 / 22%);
-  animation: hero-rise 0.75s ease 0.92s both;
+  animation: hero-rise 0.66s ease 0.52s both;
   transition: border-color 0.22s ease, box-shadow 0.22s ease, color 0.22s ease;
 }
 
@@ -786,6 +792,7 @@ button {
   .hero {
     --topbar-h: 3.25rem;
     padding-bottom: clamp(1.75rem, 6svh, 3rem);
+    cursor: default;
   }
 
   .hero__nav,
@@ -797,33 +804,72 @@ button {
     display: grid;
   }
 
-  .hero__card {
-    width: clamp(10rem, 40vw, 15rem);
+  .hero__reveal-clip,
+  .hero__card,
+  .hero__crosshair,
+  .hero__dither {
+    display: none !important;
   }
 
-  .hero__dither {
-    background-size: 12px 15px;
-    opacity: 0.26;
+  .hero__image--blurred {
+    filter: saturate(0.78) brightness(0.72) contrast(1.04);
+    object-position: 70% center;
+    transform: scale(1.02);
+  }
+
+  .hero__tint {
+    background:
+      linear-gradient(180deg, rgb(8 10 9 / 16%) 0%, transparent 42%),
+      linear-gradient(0deg, rgb(4 7 5 / 58%) 0%, transparent 56%);
+  }
+
+  .hero__shade {
+    background: linear-gradient(
+      0deg,
+      rgb(4 8 6 / 88%) 0%,
+      rgb(4 8 6 / 28%) 42%,
+      transparent 66%
+    );
   }
 
   .hero__title {
-    font-size: clamp(2.75rem, 15vw, 6rem);
+    font-size: clamp(2.3rem, 11.5vw, 4.4rem);
+    letter-spacing: -0.04em;
     line-height: 0.96;
+    white-space: nowrap;
   }
 
   .hero__meta {
-    max-width: 32ch;
+    max-width: 34ch;
+    font-size: clamp(0.92rem, 3.8vw, 1.05rem);
+    line-height: 1.6;
   }
 
   .hero__content {
     width: 100%;
     margin-inline: auto;
     padding-top: 0;
+    grid-template-columns: 1fr;
     align-self: end;
+  }
+
+  .hero__main-copy {
+    width: 100%;
+    gap: clamp(0.7rem, 3vw, 1rem);
+  }
+
+  .eyebrow {
+    max-width: 100%;
+    font-size: 0.56rem;
+    letter-spacing: 0.12em;
   }
 
   .hero__scroll-cue {
     display: none;
+  }
+
+  .hero[data-crosshair-active="true"] {
+    cursor: default;
   }
 }
 

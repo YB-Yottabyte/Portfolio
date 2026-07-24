@@ -2,12 +2,15 @@
 
 import { useEffect, useRef, type CSSProperties } from "react";
 import type { IconType } from "react-icons";
+import { InterfaceGrid } from "@/app/_components/effects/interface-grid";
 import {
   SiCplusplus,
   SiCss,
   SiFastapi,
   SiFigma,
+  SiFirebase,
   SiFlask,
+  SiH2Database,
   SiHtml5,
   SiJavascript,
   SiMongodb,
@@ -26,7 +29,7 @@ import {
   SiTensorflow,
   SiTypescript,
 } from "react-icons/si";
-import { TbApi, TbDatabase, TbScan } from "react-icons/tb";
+import { TbApi, TbDatabase, TbDatabaseSearch, TbScan } from "react-icons/tb";
 import styles from "./skills-section.module.css";
 
 type Skill = {
@@ -90,12 +93,15 @@ const SKILL_GROUPS: SkillGroup[] = [
   {
     id: "data",
     number: "04",
-    label: "Data Systems",
+    label: "Databases & Storage",
     accent: "#8ed6cf",
     skills: [
-      { name: "MongoDB", icon: SiMongodb, color: "#47a248" },
       { name: "PostgreSQL", icon: SiPostgresql, color: "#699eca" },
       { name: "MySQL", icon: SiMysql, color: "#5c91b5" },
+      { name: "MongoDB", icon: SiMongodb, color: "#47a248" },
+      { name: "H2", icon: SiH2Database, color: "#4f8db3" },
+      { name: "Firebase", icon: SiFirebase, color: "#ffca28" },
+      { name: "ChromaDB", icon: TbDatabaseSearch, color: "#e6b86a" },
     ],
   },
   {
@@ -141,6 +147,7 @@ export function SkillsSection() {
       className={styles.section}
       aria-labelledby="skills-title"
     >
+      <InterfaceGrid variant="skills" />
       <div className={styles.inner}>
         <header className={styles.header}>
           <div className={styles.headingGroup}>

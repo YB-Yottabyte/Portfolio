@@ -1,0 +1,188 @@
+.layer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+}
+
+.columns {
+  position: absolute;
+  inset: 0 max(var(--page-gutter), calc((100% - var(--content-width)) / 2));
+  border-inline: 1px solid rgb(243 238 225 / 3.5%);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0,
+    transparent calc(8.333% - 1px),
+    rgb(243 238 225 / 2.6%) calc(8.333% - 1px),
+    rgb(243 238 225 / 2.6%) 8.333%
+  );
+  opacity: 0.72;
+}
+
+.frameLabel {
+  position: absolute;
+  top: 1.15rem;
+  right: max(var(--page-gutter), calc((100% - var(--content-width)) / 2));
+  display: flex;
+  padding: 0.38rem 0.55rem;
+  align-items: center;
+  gap: 0.55rem;
+  border: 1px solid rgb(243 238 225 / 9%);
+  border-radius: 0.35rem;
+  background: rgb(8 8 8 / 58%);
+  color: rgb(243 238 225 / 38%);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.5rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
+}
+
+.frameLabel span {
+  width: 0.38rem;
+  height: 0.38rem;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0.2rem rgb(195 223 110 / 7%);
+}
+
+.frameLabel p,
+.frameLabel i {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.frameLabel i {
+  padding-left: 0.55rem;
+  border-left: 1px solid rgb(243 238 225 / 9%);
+  font-style: normal;
+}
+
+.axis {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: max(var(--page-gutter), calc((100% - var(--content-width)) / 2));
+  display: flex;
+  width: 1.5rem;
+  flex-direction: column;
+  justify-content: space-around;
+  opacity: 0.32;
+}
+
+.axis span {
+  display: block;
+  width: 0.48rem;
+  height: 1px;
+  background: rgb(243 238 225 / 38%);
+}
+
+.axis span:nth-child(3) {
+  width: 0.95rem;
+  background: var(--accent);
+}
+
+.palette {
+  position: absolute;
+  right: max(var(--page-gutter), calc((100% - var(--content-width)) / 2));
+  bottom: 1.1rem;
+  display: flex;
+  gap: 0.3rem;
+  opacity: 0.48;
+}
+
+.palette span {
+  width: 0.5rem;
+  height: 0.5rem;
+  border: 1px solid rgb(243 238 225 / 16%);
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.palette span:nth-child(2) {
+  background: #76c7c0;
+}
+
+.palette span:nth-child(3) {
+  background: var(--cream);
+}
+
+.corner {
+  position: absolute;
+  right: max(var(--page-gutter), calc((100% - var(--content-width)) / 2));
+  width: 0.85rem;
+  height: 0.85rem;
+  opacity: 0.18;
+}
+
+.cornerTop {
+  top: 4.2rem;
+  border-top: 1px solid var(--accent);
+  border-right: 1px solid var(--accent);
+}
+
+.cornerBottom {
+  bottom: 2.75rem;
+  border-right: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+}
+
+.layer[data-variant="education"] .frameLabel span,
+.layer[data-variant="projects"] .frameLabel span {
+  background: #76c7c0;
+  box-shadow: 0 0 0 0.2rem rgb(118 199 192 / 7%);
+}
+
+.layer[data-variant="experience"] .columns,
+.layer[data-variant="contact"] .columns {
+  opacity: 0.46;
+}
+
+.layer[data-variant="skills"] .axis {
+  display: none;
+}
+
+.layer[data-variant="contact"] .palette,
+.layer[data-variant="contact"] .cornerBottom {
+  display: none;
+}
+
+@media (max-width: 60rem) {
+  .columns {
+    opacity: 0.42;
+  }
+
+  .axis,
+  .palette,
+  .corner {
+    display: none;
+  }
+
+  .frameLabel {
+    top: 0.85rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .columns {
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent 0,
+      transparent calc(25% - 1px),
+      rgb(243 238 225 / 2.8%) calc(25% - 1px),
+      rgb(243 238 225 / 2.8%) 25%
+    );
+  }
+
+  .frameLabel i {
+    display: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .layer {
+    display: none;
+  }
+}

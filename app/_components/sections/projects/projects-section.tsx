@@ -2,6 +2,7 @@
 
 import { useState, type CSSProperties } from "react";
 import Image from "next/image";
+import { InterfaceGrid } from "@/app/_components/effects/interface-grid";
 import { HiArrowRight, HiArrowUpRight, HiChevronDown } from "react-icons/hi2";
 import { SiGithub } from "react-icons/si";
 import { assetPath } from "@/app/_lib/asset-path";
@@ -163,6 +164,7 @@ export function ProjectsSection() {
       className={styles.section}
       aria-labelledby="projects-title"
     >
+      <InterfaceGrid variant="projects" />
       <div className={styles.inner}>
         <header className={styles.header}>
           <div>
@@ -181,17 +183,11 @@ export function ProjectsSection() {
               Research, intelligent systems, full-stack products, and data
               studies—organized around measurable outcomes and practical use.
             </p>
-            <div className={styles.projectCount}>
-              <span>{String(FEATURED_PROJECTS.length).padStart(2, "0")} featured</span>
-              <i />
-              <span>{String(ARCHIVE_PROJECTS.length).padStart(2, "0")} in archive</span>
-            </div>
           </div>
         </header>
 
         <div className={styles.featuredHeading}>
           <p>Featured projects</p>
-          <span>Selected for depth, scale, and impact</span>
         </div>
 
         <div className={styles.featuredGrid}>

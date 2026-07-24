@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import type { CSSProperties } from "react";
+import { InterfaceGrid } from "@/app/_components/effects/interface-grid";
 import { assetPath } from "@/app/_lib/asset-path";
 import styles from "./about-section.module.css";
 
@@ -23,12 +24,12 @@ const INTERESTS = [
 export function AboutSection() {
   return (
     <section id="about" className={styles.section} aria-labelledby="about-title">
+      <InterfaceGrid variant="about" />
       <div className={styles.inner}>
         <header className={styles.header}>
           <p className={styles.eyebrow}>About · profile 001</p>
           <div className={styles.headerLine} aria-hidden="true">
             <span />
-            <i>ASU · Computer Science · Data Science</i>
           </div>
         </header>
 
@@ -96,7 +97,6 @@ export function AboutSection() {
                   } as CSSProperties
                 }
               >
-                <span className={styles.photoIndex}>01</span>
                 <span className={styles.imageFrame}>
                   <Image
                     src={assetPath("images/about.png")}
@@ -108,7 +108,6 @@ export function AboutSection() {
                 </span>
                 <figcaption className={styles.photoCaption}>
                   <span>{PHOTO_FRAME.label}</span>
-                  <i>SR / 01</i>
                 </figcaption>
               </figure>
             </div>
@@ -118,7 +117,6 @@ export function AboutSection() {
         <div className={styles.interests}>
           <div className={styles.interestsHeading}>
             <p>Areas of interest</p>
-            <span>{String(INTERESTS.length).padStart(2, "0")} focus areas</span>
           </div>
 
           <ol>

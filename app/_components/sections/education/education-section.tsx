@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { CSSProperties } from "react";
+import { InterfaceGrid } from "@/app/_components/effects/interface-grid";
 import { assetPath } from "@/app/_lib/asset-path";
 import styles from "./education-section.module.css";
 
@@ -23,6 +24,7 @@ export function EducationSection() {
         } as CSSProperties
       }
     >
+      <InterfaceGrid variant="education" />
       <div className={styles.inner}>
         <header className={styles.sectionHeader}>
           <h2 id="education-title">Education</h2>

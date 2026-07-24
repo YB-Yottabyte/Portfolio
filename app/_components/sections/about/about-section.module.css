@@ -24,7 +24,6 @@
 }
 
 .eyebrow,
-.headerLine i,
 .photoCaption,
 .interestsHeading,
 .interests li > span {
@@ -54,13 +53,6 @@
   background: rgb(243 238 225 / 10%);
 }
 
-.headerLine i {
-  color: rgb(205 210 202 / 66%);
-  font-size: 0.55rem;
-  font-style: normal;
-  white-space: nowrap;
-}
-
 .introduction {
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(24rem, 0.92fr);
@@ -86,7 +78,10 @@
 
 .title span {
   color: var(--accent);
-  font-weight: 500;
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.04em;
 }
 
 .credentials {
@@ -177,24 +172,7 @@
   z-index: 4;
   top: 11%;
   left: 16%;
-  transform: rotate(-1.5deg);
-}
-
-.photoIndex {
-  position: absolute;
-  z-index: 2;
-  top: 1rem;
-  left: 1rem;
-  display: grid;
-  width: 2.15rem;
-  height: 2.15rem;
-  place-items: center;
-  border-radius: 50%;
-  background: rgb(8 8 8 / 78%);
-  color: var(--accent);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 0.56rem;
-  backdrop-filter: blur(8px);
+  transform: none;
 }
 
 .imageFrame {
@@ -326,10 +304,6 @@
 @media (max-width: 48rem) {
   .section {
     padding-block: clamp(4.5rem, 14vw, 6rem);
-  }
-
-  .headerLine i {
-    display: none;
   }
 
   .introduction {
