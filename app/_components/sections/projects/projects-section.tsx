@@ -172,9 +172,7 @@ export function ProjectsSection() {
               Project index · {String(PROJECTS.length).padStart(2, "0")} selected works
             </p>
             <h2 id="projects-title" className={styles.title}>
-              Built to solve
-              <br />
-              <em>real problems</em>
+              <em>Projects</em>
             </h2>
           </div>
 

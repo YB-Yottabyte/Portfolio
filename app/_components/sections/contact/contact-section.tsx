@@ -47,9 +47,7 @@ export function ContactSection() {
           <div className={styles.introduction}>
             <p className={styles.eyebrow}>Contact · let’s connect</p>
             <h2 id="contact-title" className={styles.title}>
-              Let’s talk about
-              <br />
-              <em>what you’re building</em>
+              Let’s <em>connect</em>
             </h2>
           </div>
           <p className={styles.description}>

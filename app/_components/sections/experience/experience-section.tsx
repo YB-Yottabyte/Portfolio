@@ -240,9 +240,7 @@ export function ExperienceSection() {
               <span /> Experience archive
             </p>
             <h2 id="experience-title" className={styles.title}>
-              Work, shaped by
-              <br />
-              <em>curiosity</em>
+              <em>Experience</em>
             </h2>
           </div>
 

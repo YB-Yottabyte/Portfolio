@@ -187,13 +187,7 @@
 .imageFrame::after {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(180deg, transparent 65%, rgb(5 8 6 / 28%)),
-    repeating-linear-gradient(
-      0deg,
-      rgb(255 255 255 / 2%) 0 1px,
-      transparent 1px 4px
-    );
+  background: linear-gradient(180deg, transparent 72%, rgb(5 8 6 / 16%));
   pointer-events: none;
   content: "";
 }

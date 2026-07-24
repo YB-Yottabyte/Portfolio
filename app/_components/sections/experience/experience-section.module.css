@@ -36,7 +36,7 @@
   grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.42fr);
   gap: clamp(2rem, 7vw, 7rem);
   margin-bottom: clamp(3.5rem, 7vw, 6.5rem);
-  align-items: end;
+  align-items: start;
 }
 
 .headingGroup {
@@ -83,6 +83,7 @@
 .headerAside {
   display: grid;
   gap: 1.75rem;
+  margin-top: 2.35rem;
 }
 
 .headerAside > p {
@@ -729,6 +730,10 @@
   .header {
     grid-template-columns: minmax(0, 1fr);
     gap: 1.75rem;
+  }
+
+  .headerAside {
+    margin-top: 0;
   }
 
   .title {

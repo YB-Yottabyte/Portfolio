@@ -8,8 +8,8 @@ import styles from "./about-section.module.css";
 
 const PHOTO_FRAME = {
   label: "Portrait",
-  position: "28% 45%",
-  scale: "1.04",
+  position: "50% 42%",
+  scale: "1",
 } as const;
 
 const INTERESTS = [
@@ -100,10 +100,12 @@ export function AboutSection() {
               >
                 <span className={styles.imageFrame}>
                   <Image
-                    src={assetPath("images/about.png")}
-                    alt="Sai Rithwik at an aviation museum"
-                    width={1586}
-                    height={992}
+                    src={assetPath(
+                      "Sai%20Rithwik%20Kukunuri%20Photo.png",
+                    )}
+                    alt="Portrait of Sai Rithwik Kukunuri"
+                    width={1122}
+                    height={1402}
                     sizes="(max-width: 48rem) 78vw, 34vw"
                   />
                 </span>

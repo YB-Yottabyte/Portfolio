@@ -140,7 +140,9 @@
   opacity: 0.46;
 }
 
-.layer[data-variant="skills"] .axis {
+.layer[data-variant="skills"] .axis,
+.layer[data-variant="experience"] .axis,
+.layer[data-variant="contact"] .axis {
   display: none;
 }
 
